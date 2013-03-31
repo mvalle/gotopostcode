@@ -222,106 +222,228 @@ switch(cur)
   }
 
 I:
-
-IG
-IM
-IP
-IV
+//next cur
+if(cur == 'G')
+  goto Ilford;
+if(cur == 'M')
+  goto IsleOfMan;
+if(cur == 'P')
+  goto Ipswich;
+if(cur == 'V')
+  goto Inverness;
+goto invalid;
 
 J:
-JE
+//next cur
+if(cur == 'E')
+  goto Jersey;
+goto invalid;
 
 K:
-KA
-KT
-KW
-KY
+if(cur == 'A')
+  goto Kilmarnock;
+if(cur == 'T')
+  goto Kingston;
+if(cur == 'W')
+  goto Kirkwall;
+if(cur == 'Y')
+  goto Kirkcaldy;
+goto invalid;
 
 L:
-L 
-LA 
-LD 
-LE 
-LL 
-LN 
-LS 
-LU 
+switch(cur)
+  {
+  case 'A':
+   goto Lancaster;
+  case 'D': 
+    goto LlandindodWells;
+  case 'E': 
+    goto Leicester;
+  case 'L':
+    goto Llandudno;
+  case 'N': 
+    goto Lincoln;                                                    
+  case 'S': 
+    goto Leeds;                                                      
+  case 'U': 
+    goto Luton;
+  default:
+    if(cur > 47 && cur < 58)
+      goto Liverpool;
+    goto invalid;
+  }
+
 
 M:
-M 
-ME
-MK
-ML 
+//next cur
+if(cur == 'E')
+  goto Rochester;
+if(cur == 'K')
+  goto MiltonKeynes;
+if(cur == 'L')
+  goto Motherwell;
+if(cur > 47 && cur < 58)
+  goto Manchester;
+goto invalid;
 
-M:
-N 
-NE
-NG 
-NN 
-NP
-NR 
-NW 
+N:
+//next cur
+switch(cur)
+  {
+  case 'E': 
+    goto NewcastkeUponTyne;
+  case 'G': 
+    goto Nottingham;
+  case 'N': 
+    goto Northampton;
+  case 'P': 
+    goto Newport;
+  case 'R': 
+    goto Norwich;
+  case 'W': 
+    goto LondonNorthWest;
+  default:
+    if(cur > 47 && cur < 58)
+      goto LondonNorth;
+    goto invalid;
+  }
 
 O:
-OL
-OX 
+//next cur
+if(cur == 'L')
+  goto Oldham;
+if(cur == 'X')
+  goto Oxford;
+goto invalid;
 
 P:
-PA 
-PE
-PH
-PL
-PO
-PR
-RG
-RH
-RM
+//next cur
+switch(cur)
+  {
+  case 'A': 
+    goto Paisley;
+  case 'E': 
+    goto Peterborough;                                                      
+  case 'H': 
+    goto Perth;                                                 
+  case 'L': 
+    goto Plymouth;                                                        
+  case 'O': 
+    goto Portsmouth;                                                     
+  case 'R': 
+    goto Preston;
+  default:
+    goto invalid;
+  }
+
+R:
+//next cur
+if(cur == 'G')
+  goto Reading;
+if(cur == 'H')
+  goto Redhill;
+if(cur == 'M')
+  goto Romford;
+goto invalid;
 
 S:
-S
-SA 
-SE 
-SG
-SK 
-SL 
-SM
-SN 
-SO 
-SP
-SR 
-SS 
-ST
-SW 
-SY 
+//next cur
+switch(cur)
+  {
+  case 'A': 
+    goto Swansea;
+  case 'E': 
+    goto LondonSouthEastern;                                                      
+  case 'G': 
+    goto Stevenage;                                           
+  case 'K': 
+    goto Stockport;                                                    
+  case 'L': 
+    goto Slough;                                                    
+  case 'M': 
+    goto Sutton;                                                       
+  case 'N': 
+    goto Swindon;                                                       
+  case 'O': 
+    goto Southampton;                                                      
+  case 'P': 
+    goto Salisbury;                                                  
+  case 'R': 
+    goto Sunderland;                                                    
+  case 'S': 
+    goto SouthendOnSea;                                                           
+  case 'T': 
+    goto StokeOnTrent;                                                
+  case 'W': 
+    goto SouthWesternAndBattersea;
+  case 'Y': 
+    goto Shrewsbury;
+  default:
+    if(cur > 47 && cur < 58)
+      goto Sheffield;
+    goto invalid;
+  }
 
 T:
-TA 
-TD 
-TF 
-TN 
-TQ 
-TR 
-TS 
-TW 
+switch(cur)
+  {
+  case 'A': 
+    goto Taunton;
+  case 'D': 
+    goto Galashiels;
+  case 'F': 
+    goto Telford;                                                   
+  case 'N': 
+    goto Tonbridge;                                                          
+  case 'Q': 
+    goto Torquay;                                                    
+  case 'R': 
+    goto Truro;                                                      
+  case 'S': 
+    goto Cleveland;                                                        
+  case 'W': 
+    goto Twickenham;                                                    
+  default: 
+    goto invalid;
+  }
 
 U:
-UB 
+if(cur == 'B')
+  goto Southall;
+goto invalid;
 
 W:
-W 
-WA
-WC
-WD
-WF
-WN
-WR
-WS
-WV
-
+switch(cur)
+  {
+  case 'A': 
+    goto Warrington;
+  case 'C': 
+    goto LondonWestCenteral;                                                      
+  case 'D': 
+    goto Watford;                                            
+  case 'F': 
+    goto Wakefield;                                                      
+  case 'N': 
+    goto Wigan;                                                    
+  case 'R': 
+    goto Worcester;                                                        
+  case 'S': 
+    goto Walsall;                                                    
+  case 'V': 
+    goto Wolverhampton;                                                      
+  default:
+    if(cur > 47 && cur < 58)
+      goto LondonWest;
+    goto invalid;
+  }
 Y:
-YO
+//next cur
+if(cur == 'O')
+  goto York;
+goto invalid;
 
 Z:
-ZE
+if(cur == 'E')
+  goto Lerwick;
+goto invalid;
 
-invalid:
