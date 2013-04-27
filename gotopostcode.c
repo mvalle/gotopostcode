@@ -66,9 +66,9 @@ switch(cur)
 
 A:
 // next cur
-if(cur == 'B' || cur == 'b')
+if(cur == 'B')
   goto Aberdeen;
-if(cur = 'L' || cur == 'l')
+if(cur = 'L')
   goto StAlbans;
 goto invalid;
 
@@ -218,7 +218,7 @@ switch(cur)
   case 'X':
     goto Halifax;
   default:
-    goto invaid;
+    goto invalid;
   }
 
 I:
@@ -262,9 +262,9 @@ switch(cur)
   case 'L':
     goto Llandudno;
   case 'N': 
-    goto Lincoln;                                                    
+    goto Lincoln;   
   case 'S': 
-    goto Leeds;                                                      
+    goto Leeds;     
   case 'U': 
     goto Luton;
   default:
@@ -323,13 +323,13 @@ switch(cur)
   case 'A': 
     goto Paisley;
   case 'E': 
-    goto Peterborough;                                                      
+    goto Peterborough;           
   case 'H': 
-    goto Perth;                                                 
+    goto Perth;            
   case 'L': 
-    goto Plymouth;                                                        
+    goto Plymouth; 
   case 'O': 
-    goto Portsmouth;                                                     
+    goto Portsmouth;
   case 'R': 
     goto Preston;
   default:
@@ -353,27 +353,27 @@ switch(cur)
   case 'A': 
     goto Swansea;
   case 'E': 
-    goto LondonSouthEastern;                                                      
+    goto LondonSouthEastern;      
   case 'G': 
-    goto Stevenage;                                           
+    goto Stevenage;      
   case 'K': 
-    goto Stockport;                                                    
+    goto Stockport;            
   case 'L': 
-    goto Slough;                                                    
+    goto Slough;                   
   case 'M': 
-    goto Sutton;                                                       
+    goto Sutton;       
   case 'N': 
-    goto Swindon;                                                       
+    goto Swindon;   
   case 'O': 
-    goto Southampton;                                                      
+    goto Southampton;             
   case 'P': 
-    goto Salisbury;                                                  
+    goto Salisbury;        
   case 'R': 
-    goto Sunderland;                                                    
+    goto Sunderland;     
   case 'S': 
-    goto SouthendOnSea;                                                           
+    goto SouthendOnSea;        
   case 'T': 
-    goto StokeOnTrent;                                                
+    goto StokeOnTrent;
   case 'W': 
     goto SouthWesternAndBattersea;
   case 'Y': 
@@ -392,17 +392,17 @@ switch(cur)
   case 'D': 
     goto Galashiels;
   case 'F': 
-    goto Telford;                                                   
+    goto Telford;
   case 'N': 
-    goto Tonbridge;                                                          
+    goto Tonbridge;
   case 'Q': 
-    goto Torquay;                                                    
+    goto Torquay;  
   case 'R': 
-    goto Truro;                                                      
+    goto Truro;    
   case 'S': 
-    goto Cleveland;                                                        
+    goto Cleveland;
   case 'W': 
-    goto Twickenham;                                                    
+    goto Twickenham;
   default: 
     goto invalid;
   }
@@ -418,19 +418,19 @@ switch(cur)
   case 'A': 
     goto Warrington;
   case 'C': 
-    goto LondonWestCenteral;                                                      
+    goto LondonWestCenteral;
   case 'D': 
-    goto Watford;                                            
+    goto Watford;           
   case 'F': 
-    goto Wakefield;                                                      
+    goto Wakefield;         
   case 'N': 
-    goto Wigan;                                                    
+    goto Wigan;             
   case 'R': 
-    goto Worcester;                                                        
+    goto Worcester;         
   case 'S': 
-    goto Walsall;                                                    
+    goto Walsall;           
   case 'V': 
-    goto Wolverhampton;                                                      
+    goto Wolverhampton;     
   default:
     if(cur > 47 && cur < 58)
       goto LondonWest;
@@ -447,3 +447,2434 @@ if(cur == 'E')
   goto Lerwick;
 goto invalid;
 
+// Local Address
+
+//A
+Aberdeen:
+//next cur
+switch(cur)
+{
+ case '1':
+   goto District06;
+ case '2':
+   goto District15;
+ case '3':
+   goto DistrictFull;
+ case '4':
+   goto District15;
+ case '5':
+   goto District16;
+ case '9': 
+   //next cur
+   if(cur == '9') // Non-geographic for Aberdeen City
+     goto valid;
+   goto invalid;
+ }
+
+
+StAlbans:
+//next cur
+switch(cur) 
+  {
+  case '1':
+   //next cur
+    switch(cur) 
+      {
+      case: '0':
+	goto valid;
+      default: 
+	goto invalid;
+      }
+  case '2':
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
+
+//B
+Bath:
+//next cur
+switch(cur) {
+ case '1':
+   goto District06;
+ case '2':
+   goto District02;
+ case '3':                                                                                        
+ case '4':    
+ case '5':
+ case '6':
+ case '7':
+ case '8':
+ case '9':
+   goto valid;
+   
+ default: 
+   goto invalid;
+ }
+
+Blackburn:
+//next cur
+switch(cur) {
+ case '0':
+   goto valid;
+ case '1':
+   //next cur
+   switch(cur) {
+   case: '0':
+   case: '1':
+   case: '2':
+   case: '8':
+     goto valid;
+   default:
+     goto invalid;
+   }
+ case '2':
+ case '3':
+ case '4':                                                                                        
+ case '5':
+ case '6':
+ case '7':
+ case '8':
+   goto valid;
+ case '9':
+   //next cur
+   switch(cur) {
+   case: '4':
+     goto valid;
+   default: 
+     goto invalid;
+   }
+ default:
+   goto invalid;
+ }
+
+
+Bradford:
+//next cur
+switch(cur) {
+ case '1':
+   goto DistrictFull;
+ case '2':
+   goto District04;
+ case '3':
+ case '4':
+ case '5':
+ case '6':
+ case '7':
+ case '8':
+   goto valid;
+ default:
+   goto invalid;
+ case '9':
+   //next cur
+   switch(cur) 
+     {
+     case: '7':
+     case: '8':
+     case: '9':
+       goto valid;
+     default: 
+       goto invalid;
+     }
+ default:
+   goto invalid;
+ }
+
+BritishForces:
+goto NotImplemented;
+
+Bournemouth:
+//next cur
+switch(cur) 
+  {
+  case '1':
+    goto DistrictFull;
+  case '2':
+    goto District05;
+  case '3':                                                                                          
+  case '4':                                                                                          
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default: 
+    goto invalid;
+  }
+
+Bolton:
+//next cur
+switch(cur) 
+{
+ case '0':
+   goto valid;
+ case '1':
+   goto Discrict1;
+ case '2':
+ case '3':                                                                                          
+ case '4':                                                                                          
+ case '5':
+ case '6':
+ case '7':
+   switch(cur) {
+   case: '8':
+     goto valid;
+   default:
+     goto invalid;
+   }
+ case '8':
+ case '9':
+   goto valid;
+ default:
+   goto invalid;
+ }
+
+
+Brighton:
+//next cur
+switch(cur) {
+ case '1':
+   goto District08;
+ case '2':
+   goto District07;
+ case '3':
+   goto valid;                                                                                 
+ case '4':                                                                                          
+   goto District14;
+ case '5':
+   goto District02;
+ case '6':
+ case '7':
+   goto valid;
+ case '8':
+   goto District8;
+ case '9':
+   //next cur
+   switch(cur) {
+   case: '1':
+   case: '9': // Lloyds TSB
+     goto valid;
+   default: goto invalid;
+   }
+ default: goto invalid;
+ }
+
+Bromley:
+// only BR1 - BR8
+goto FullDistrict18;
+
+Bristol: // And TV Licencing special PC:
+switch(cur) {
+ case '1':
+   //next cur
+   switch(cur) {
+   case: '0':
+   case: '1':
+   case: '3':
+   case: '4':
+   case: '5':
+   case: '6':
+     goto valid;
+   default:
+     goto invalid;
+   }
+ case '2':
+   goto DistrictFull;
+ case '3':                                                                                          
+   //next cur                                                                                         
+   switch(cur) {                                                                                      
+   case: '0':                                                                                         
+   case: '1':                                                                                         
+   case: '2':                                                                                         
+   case: '4':                                                                                         
+   case: '5':                                                                                         
+   case: '6':                                                                                         
+   case: '7':                                                                                         
+   case: '9':                                                                                         
+     goto valid;
+   default: 
+     goto invalid;                                                                             
+   }                                                                                                  
+ case '4':                                                                                          
+   //next cur                                                                                         
+   switch(cur) {                                                                                      
+   case: '0':
+   case: '1':
+   case: '8':
+   case: '9':
+     goto valid;
+   default:
+     goto invalid;
+   }
+ case '5':
+ case '6':
+ case '7':
+ case '8':
+   goto valid;
+ case '9':
+   goto District89;
+ default:
+   goto invalid;
+ }
+
+Belfast:
+
+switch(cur)
+  {
+  case '1':
+    goto District07;
+  case '2':
+    goto District9;
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
+Banks:
+
+switch(cur)
+  {
+  case '1':
+    // BX1 1LT Lloyds TSB
+  case '2':
+    // BX2 1LB Lloyds Bank, BOS
+  case '3':
+    // BX3 2BB Barclays
+  case '5':
+    // BX5 5AT HMRC VAT
+    goto NotImplemented;
+
+  default:
+    goto invalid;
+  }
+
+
+
+Bigmingham:
+
+switch(cur)
+  {
+  case '1':
+    goto DistrictFull;
+  case '2':
+    goto DistrictFull;
+  case '3':
+    goto District08;
+  case '4':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '5':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '6':
+    goto DistrictFull;
+  case '7':
+    goto DistrictFull;
+  case '8':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '9':
+    goto DistrictFull;
+  default:
+    goto invalid;
+  }
+
+//C
+Carlisle:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '3':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '4':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '5':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '6':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '7':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '8':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '9':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  default:
+    goto invalid;
+  }
+
+
+
+Cambridge:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '3':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '4':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '5':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '6':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '7':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '8':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '9':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  default:
+    goto invalid;
+  }
+
+
+Cardiff:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '3':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '4':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '5':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '6':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '7':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '8':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '9':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  default:
+    goto invalid;
+  }
+
+
+Chester:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '3':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '4':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '5':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '6':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '7':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '8':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '9':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  default:
+    goto invalid;
+  }
+
+
+Chelmsford:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '3':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '4':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '5':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '6':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '7':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '8':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '9':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  default:
+    goto invalid;
+  }
+
+
+Colchester:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '3':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '4':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '5':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '6':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '7':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '8':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '9':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  default:
+    goto invalid;
+  }
+
+
+Croydon:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '3':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '4':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '5':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '6':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '7':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '8':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '9':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  default:
+    goto invalid;
+  }
+
+
+Canterbury:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '3':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '4':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '5':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '6':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '7':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '8':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '9':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  default:
+    goto invalid;
+  }
+
+
+Coventry:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '3':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '4':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '5':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '6':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '7':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '8':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '9':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  default:
+    goto invalid;
+  }
+
+Crewe:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '3':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '4':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '5':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '6':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '7':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '8':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '9':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  default:
+    goto invalid;
+  }
+
+
+//D
+Dartford:
+Dundee:
+Derby:
+DumfriesAndGalloway:
+Durham:
+Darlington:
+Doncaster:
+Dorchester:
+Dudley:
+
+//E
+LondonEastCeneral:
+Edinburgh:
+Enfield:
+Exeter:
+LondonEast:
+
+//F
+Falkirk:
+Blackpool:
+
+//G
+Gloucester:
+Guilford:
+Gournsey:
+Glasgow:
+Girobank: //GIR:
+
+//H
+Harrow:
+Huddersfield:
+Harrogate:
+HemelHempstead:
+Hereford:
+OuterHebrides:
+Hull:
+Halifax:
+
+//I
+Ilford:
+IsleOfMan:
+Ipswich:
+Inverness:
+
+//J
+Jersey:
+
+//K
+Kilmarnock:
+Kingston:
+Kirkwall:
+Kirkcaldy:
+
+//L
+Lancaster:
+LlandindodWells:
+Leicester:
+Llandudno:
+Lincoln:
+Leeds:
+Luton:
+Liverpool:
+
+//M
+Rochester:
+MiltonKeynes:
+Motherwell:
+Manchester:
+
+//N
+NewcastkeUponTyne:
+Nottingham:
+Northampton:
+Newport:
+Norwich:
+LondonNorthWest:
+LondonNorth:
+
+//O
+Oldham:
+Oxford:
+
+//P
+Paisley:
+Peterborough:
+Perth:
+Plymouth:
+Portsmouth:
+Preston:
+
+//R
+Reading:
+Redhill:
+Romford:
+
+//S
+Swansea:
+LondonSouthEastern:
+Stevenage:
+Stockport:
+Slough:
+Sutton:
+Swindon:
+Southampton:
+Salisbury:
+Sunderland:
+SouthendOnSea:
+StokeOnTrent:
+SouthWesternAndBattersea:
+Shrewsbury:
+Sheffield:
+
+//T
+Taunton:
+Galashiels:
+Telford:
+Tonbridge:
+Torquay:
+Truro:
+Cleveland:
+Twickenham:
+
+//U
+Southall:
+
+//W
+Warrington:
+LondonWestCenteral:
+Watford:
+Wakefield:
+Wigan:
+Worcester:
+Walsall:
+Wolverhampton:
+LondonWest:
+
+//Y
+York:
+
+//Z
+Lerwick:
+
+
+DistrictFull:
+//next cur
+switch(cur) 
+  {
+  case: '0':
+  case: '1':
+  case: '2':
+  case: '3':
+  case: '4':
+  case: '5':
+  case: '6':
+  case: '7':
+  case: '8':
+  case: '9':
+    goto valid;
+  default: 
+    goto invalid;
+  }
+District08:
+//next cur
+switch(cur) 
+  {
+  case: '0':
+  case: '1':
+  case: '2':
+  case: '3':
+  case: '4':
+  case: '5':
+  case: '6':
+  case: '7':
+  case: '8':
+    goto valid;
+  default: 
+    goto invalid;
+  }
+District07:
+//next cur
+switch(cur) 
+  {
+  case: '0':
+  case: '1':
+  case: '2':
+  case: '3':
+  case: '4':
+  case: '5':
+  case: '6':
+  case: '7':
+    goto valid;
+  default: 
+    goto invalid;
+  }
+District06:
+//next cur
+switch(cur) 
+  {
+  case: '0':
+  case: '1':
+  case: '2':
+  case: '3':
+  case: '4':
+  case: '5':
+  case: '6':
+    goto valid;
+  default: 
+    goto invalid;
+  }
+
+District05:
+//next cur
+switch(cur) 
+  {
+  case: '0':
+  case: '1':
+  case: '2':
+  case: '3':
+  case: '4':
+  case: '5':
+    goto valid;
+  default: 
+    goto invalid;
+  }
+District04:
+//next cur
+switch(cur) 
+  {
+  case: '0':
+  case: '1':
+  case: '2':
+  case: '3':
+  case: '4':
+    goto valid;
+  default: 
+    goto invalid;
+  }
+
+District02:
+//next cur
+switch(cur) 
+  {
+  case: '0':
+  case: '1':
+  case: '2':
+    goto valid;
+  default: 
+    goto invalid;
+  }
+District14:
+//next cur
+switch(cur) 
+  {
+  case: '1':
+  case: '2':
+  case: '3':
+  case: '4':
+    goto valid;
+  default: 
+    goto invalid;
+  }
+District15:
+//next cur
+switch(cur) 
+  {
+  case: '1':
+  case: '2':
+  case: '3':
+  case: '4':
+  case: '5':
+    goto valid;
+  default: 
+    goto invalid;
+  }
+District16:
+//next cur
+switch(cur) 
+  {
+  case: '1':
+  case: '2':
+  case: '3':
+  case: '4':
+  case: '5':
+    goto valid;
+  default: 
+    goto invalid;
+  }
+District89:
+//next cur
+switch(cur) 
+  {
+  case: '8':
+  case: '9':
+    goto valid;
+  default: 
+    goto invalid;
+  }
+District9:
+//next cur
+switch(cur)
+  {
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+District8:
+//next cur
+switch(cur)
+  {
+  case '8':
+    goto valid;
+  default:
+    goto invalid;
+  }
+District1:
+//next cur
+switch(cur)
+  {
+  case '1':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
+FullDistrict18:
+//next cur
+switch(cur)
+  {
+   case: '1':
+   case: '2':
+   case: '3':
+   case: '4':
+   case: '5':
+   case: '6':
+   case: '7':
+   case: '8':
+     goto valid;
+   default:
+     goto invalid;
+  }
+
+
+// Invald
+invalid:
