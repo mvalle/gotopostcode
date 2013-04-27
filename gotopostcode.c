@@ -507,7 +507,7 @@ switch(cur) {
    goto District06;
  case '2':
    goto District02;
- case '3':                                                                                        
+ case '3': 
  case '4':    
  case '5':
  case '6':
@@ -538,7 +538,7 @@ switch(cur) {
    }
  case '2':
  case '3':
- case '4':                                                                                        
+ case '4': 
  case '5':
  case '6':
  case '7':
@@ -599,8 +599,8 @@ switch(cur)
     goto DistrictFull;
   case '2':
     goto District05;
-  case '3':                                                                                          
-  case '4':                                                                                          
+  case '3':
+  case '4':
   case '5':
   case '6':
   case '7':
@@ -620,8 +620,8 @@ switch(cur)
  case '1':
    goto Discrict1;
  case '2':
- case '3':                                                                                          
- case '4':                                                                                          
+ case '3':
+ case '4':
  case '5':
  case '6':
  case '7':
@@ -647,8 +647,8 @@ switch(cur) {
  case '2':
    goto District07;
  case '3':
-   goto valid;                                                                                 
- case '4':                                                                                          
+   goto valid;
+ case '4':    
    goto District14;
  case '5':
    goto District02;
@@ -670,7 +670,7 @@ switch(cur) {
 
 Bromley:
 // only BR1 - BR8
-goto FullDistrict18;
+goto DistrictOnly18;
 
 Bristol: // And TV Licencing special PC:
 switch(cur) {
@@ -689,32 +689,34 @@ switch(cur) {
    }
  case '2':
    goto DistrictFull;
- case '3':                                                                                          
-   //next cur                                                                                         
-   switch(cur) {                                                                                      
-   case: '0':                                                                                         
-   case: '1':                                                                                         
-   case: '2':                                                                                         
-   case: '4':                                                                                         
-   case: '5':                                                                                         
-   case: '6':                                                                                         
-   case: '7':                                                                                         
-   case: '9':                                                                                         
-     goto valid;
-   default: 
-     goto invalid;                                                                             
-   }                                                                                                  
- case '4':                                                                                          
-   //next cur                                                                                         
-   switch(cur) {                                                                                      
-   case: '0':
-   case: '1':
-   case: '8':
-   case: '9':
-     goto valid;
-   default:
-     goto invalid;
-   }
+ case '3':
+   //next cur
+   switch(cur)
+     {           
+     case: '0':
+     case: '1': 
+     case: '2': 
+     case: '4': 
+     case: '5': 
+     case: '6': 
+     case: '7': 
+     case: '9': 
+       goto valid;
+     default: 
+       goto invalid;    
+     }                  
+ case '4':            
+   //next cur         
+   switch(cur)
+     {            
+     case: '0':
+     case: '1':
+     case: '8':
+     case: '9':
+       goto valid;
+     default:
+       goto invalid;
+     }
  case '5':
  case '6':
  case '7':
@@ -827,339 +829,38 @@ Carlisle:
 switch(cur)
   {
   case '1':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto DistrictFull;
   case '2':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District29;
   case '3':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '4':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '5':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '6':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '7':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '8':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto valid;
   case '9':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District5;
   default:
     goto invalid;
   }
-
-
 
 Cambridge:
 
 switch(cur)
   {
   case '1':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District01;
   case '2':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District15;
   case '3':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '4':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '5':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '6':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '7':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '8':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '9':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto invalid;
   default:
     goto invalid;
   }
@@ -1169,164 +870,41 @@ Cardiff:
 
 switch(cur)
   {
-  case '1':
+    // no CF1, but CF10, CF11, CF14, CF15
+  case '1': 
     //next cur
     switch(cur)
       {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
+      case '0':
+      case '1':
+      case '4':
+      case '5':
 	goto valid;
       default:
 	goto invalid;
       }
-  case '2':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+  case '2': // No CF2, but CF22, CF23
+    goto DistrictOnly23;
   case '3':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto DistrictFull;
   case '4':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto DistrictOnly08;
   case '5':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto valid;
   case '6':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto DistrictOnly14;
   case '7':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto DistrictOnly12;
   case '8':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto DistrictOnly13;
   case '9':
+    // no CF9, but CF91 CF95, CF99
     //next cur
     switch(cur)
       {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
+      case '1':
+      case '5':
+      case '9':
 	goto valid;
       default:
 	goto invalid;
@@ -1341,167 +919,23 @@ Chester:
 switch(cur)
   {
   case '1':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto valid;
   case '2':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District59;
   case '3':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District04;
   case '4':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District19;
   case '5':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto valid;
   case '6':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District06;
   case '7':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District0;
   case '8':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District8;
   case '9':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto DistrictOnly8;
   default:
     goto invalid;
   }
@@ -1512,161 +946,23 @@ Chelmsford:
 switch(cur)
   {
   case '1':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District19;
   case '2':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District04;
   case '3':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '4':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '5':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '6':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto valid;
   case '7':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District7;
   case '8':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto valid;
   case '9':
     //next cur
     switch(cur)
       {
-      case: '0':
-      case: '1':
       case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
       case: '8':
       case: '9':
 	goto valid;
@@ -1679,186 +975,29 @@ switch(cur)
 
 
 Colchester:
-
+//next cur
 switch(cur)
   {
   case '1':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District06;
   case '2':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '3':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '4':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '5':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '6':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '7':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '8':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '9':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto valid;
   default:
     goto invalid;
   }
-
 
 Croydon:
-
-switch(cur)
-  {
-  case '1':
-    //next cur
+goto DistrictOnlyFull;
     switch(cur)
       {
       case: '0':
-      case: '1':
       case: '2':
       case: '3':
       case: '4':
@@ -1871,492 +1010,47 @@ switch(cur)
       default:
 	goto invalid;
       }
-  case '2':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
-  case '3':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
-  case '4':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
-  case '5':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
-  case '6':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
-  case '7':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
-  case '8':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
-  case '9':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
-  default:
-    goto invalid;
-  }
-
 
 Canterbury:
 
 switch(cur)
   {
   case '1':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto DistrictFull;
   case '2':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District01;
   case '3':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '4':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto valid;
   case '5':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District0;
   case '6':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '7':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '8':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '9':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto valid;
   default:
     goto invalid;
   }
 
-
 Coventry:
-
+//next cur
 switch(cur)
   {
   case '1':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District03;
   case '2':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District13;
   case '3':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District17;
   case '4':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District7;
   case '5':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '6':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '7':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '8':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '9':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto valid;
   default:
     goto invalid;
   }
@@ -2366,167 +1060,17 @@ Crewe:
 switch(cur)
   {
   case '1':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District02;
   case '2':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '3':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '4':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '5':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '6':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '7':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
   case '8':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto valid;
   case '9':
-    //next cur
-    switch(cur)
-      {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-	goto valid;
-      default:
-	goto invalid;
-      }
+    goto District8;
   default:
     goto invalid;
   }
@@ -2674,6 +1218,7 @@ York:
 
 //Z
 Lerwick:
+goto ;
 
 
 DistrictFull:
@@ -2782,6 +1327,16 @@ switch(cur)
   default: 
     goto invalid;
   }
+District01:
+//next cur
+switch(cur) 
+  {
+  case: '0':
+  case: '1':
+    goto valid;
+  default: 
+    goto invalid;
+  }
 District14:
 //next cur
 switch(cur) 
@@ -2820,6 +1375,16 @@ switch(cur)
   default: 
     goto invalid;
   }
+DistrictOnly23:
+//next cur
+switch(cur) 
+  {
+  case: '2':
+  case: '3':
+    goto valid;
+  default: 
+    goto invalid;
+  }
 District89:
 //next cur
 switch(cur) 
@@ -2848,6 +1413,15 @@ switch(cur)
   default:
     goto invalid;
   }
+District5:
+//next cur
+switch(cur)
+  {
+  case '5':
+    goto valid;
+  default:
+    goto invalid;
+  }
 District1:
 //next cur
 switch(cur)
@@ -2858,21 +1432,57 @@ switch(cur)
     goto invalid;
   }
 
-FullDistrict18:
+DistrictFull:
+//next cur
+switch(cur) 
+  {
+  case: '0':
+  case: '1':
+  case: '2':
+  case: '3':
+  case: '4':
+  case: '5':
+  case: '6':
+  case: '7':
+  case: '8':
+  case: '9':
+    goto valid;
+  default: 
+    goto invalid;
+  }
+
+DistrictOnly08:
 //next cur
 switch(cur)
   {
-   case: '1':
-   case: '2':
-   case: '3':
-   case: '4':
-   case: '5':
-   case: '6':
-   case: '7':
-   case: '8':
-     goto valid;
-   default:
-     goto invalid;
+  case '0':
+  case: '1':
+  case: '2':
+  case: '3':
+  case: '4':
+  case: '5':
+  case: '6':
+  case: '7':
+  case: '8':
+    goto valid;
+  default:
+    goto invalid;
+  }
+DistrictOnly18:
+//next cur
+switch(cur)
+  {
+  case: '1':
+  case: '2':
+  case: '3':
+  case: '4':
+  case: '5':
+  case: '6':
+  case: '7':
+  case: '8':
+    goto valid;
+  default:
+    goto invalid;
   }
 
 
