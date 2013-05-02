@@ -1078,25 +1078,348 @@ switch(cur)
 
 //D
 Dartford:
+
+switch(cur)
+  {
+  case '1':
+    goto District08;
+  case '2':
+  case '3':                                                                          
+  case '4':                                                                          
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
+
 Dundee:
+
+switch(cur)
+  {
+  case '1':
+    goto District01;
+  case '2':
+  case '3':                                                                          
+  case: '4':
+  case: '5':
+  case: '6':
+  case: '7':
+  case: '8':
+  case: '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 Derby:
+
+switch(cur)
+  {
+  case '1':
+    goto District15;
+  case '2':
+    goto DistrictOnly14;
+  case '3':                                                                          
+    goto valid;                                                                     
+  case '4':                                                                          
+    goto District5;
+  case '5':
+    goto District56;
+  case '6':
+    goto District5;
+  case '7':
+    goto District25;
+  case '9':
+    goto DistrictOnly9;
+  default:
+    goto invalid;
+  }
+
 DumfriesAndGalloway:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '6':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '2':
+  case '3':                                                                          
+  case '4':                                                                          
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 Durham:
+
+switch(cur)
+  {
+  case '1':
+  case '2':
+  case '3':                                                                          
+  case '4':                                                                          
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+    goto valid;
+  case '9':
+    goto District79;
+  default:
+    goto invalid;
+  }
+
 Darlington:
+
+switch(cur)
+  {
+  case '1':
+    goto District07;
+  case '2':
+  case '3':                                                                          
+  case '4':                                                                          
+  case '5':
+  case '6':
+  case '7':
+  case: '8':
+    goto valid;
+  case '9':
+    goto District8;
+  default:
+    goto invalid;
+  }
+
 Doncaster:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;                                                                   
+      }                                                                                
+  case '2':
+    goto District02;
+  case '3':                                                                          
+    goto District19;
+  case '4':                                                                          
+    goto District01;
+  case '5':
+    goto District5;
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 Dorchester:
+
+switch(cur)
+  {
+  case '1':
+    goto District01;
+  case '2':
+  case '3':                                                                          
+  case '4':                                                                          
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 Dudley:
+
+switch(cur)
+  {
+  case '1':
+    goto District14;
+  case '2':
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
 
 //E
 LondonEastCeneral:
+// TODO ECx
+switch(cur)
+  {
+  case '1':
+    goto EC1;
+  case '2':
+    goto EC2;
+  case '3':                                                                          
+    goto EC3;
+  case '4':                                                                          
+    goto EC4;
+  case '5':
+    goto District0;
+  default:
+    goto invalid;
+  }
+
+
 Edinburgh:
+
+switch(cur)
+  {
+  case '1':
+  case '2':
+  case '3':
+  case '4':                                                                          
+    goto DistrictFull;
+  case '5':
+    goto District15;
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
+
 Enfield:
+
+switch(cur)
+  {
+  case '1':
+    goto District01;
+  case '2':
+  case '3':                                                                          
+  case '4':                                                                          
+  case '5':
+  case '6':
+    goto valid;
+  case '7':
+    goto District7;
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
+
 Exeter:
+
+switch(cur)
+  {
+  case '1':
+    goto DistrictFull;
+  case '2':
+    goto District04;
+  case '3':
+    goto District19;
+  case '4':                                                                          
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
+
 LondonEast:
+
+switch(cur)
+  {
+  case '1':
+    goto E1;
+  case '2':
+    goto District0;
+  case '3':                                                                          
+  case '4':                                                                          
+  case '5':
+  case '6':
+    goto valid;
+  case '7':
+    goto District7;
+  case '8':
+    goto valid;
+  case '9':
+    goto District8;
+  default:
+    goto invalid;
+  }
+
 
 //F
 Falkirk:
+
+switch(cur)
+  {
+  case '1':
+    goto DistrictFull;
+  case '2':
+    goto District01;
+  case '3':                                                                          
+  case '4':                                                                          
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
+
 Blackpool:
+goto District08;
 
 //G
 Gloucester:
@@ -1218,7 +1541,7 @@ York:
 
 //Z
 Lerwick:
-goto ;
+goto District13;
 
 
 DistrictFull:
