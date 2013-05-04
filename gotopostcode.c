@@ -1124,9 +1124,9 @@ switch(cur)
     goto District15;
   case '2':
     goto DistrictOnly14;
-  case '3':                                                                          
-    goto valid;                                                                     
-  case '4':                                                                          
+  case '3':            
+    goto valid;
+  case '4':
     goto District5;
   case '5':
     goto District56;
@@ -1159,8 +1159,8 @@ switch(cur)
 	goto invalid;
       }
   case '2':
-  case '3':                                                                          
-  case '4':                                                                          
+  case '3':
+  case '4':
   case '5':
   case '6':
   case '7':
@@ -1177,8 +1177,8 @@ switch(cur)
   {
   case '1':
   case '2':
-  case '3':                                                                          
-  case '4':                                                                          
+  case '3':                      
+  case '4':   
   case '5':
   case '6':
   case '7':
@@ -1197,8 +1197,8 @@ switch(cur)
   case '1':
     goto District07;
   case '2':
-  case '3':                                                                          
-  case '4':                                                                          
+  case '3':
+  case '4':
   case '5':
   case '6':
   case '7':
@@ -1230,13 +1230,13 @@ switch(cur)
       case: '9':
 	goto valid;
       default:
-	goto invalid;                                                                   
-      }                                                                                
+	goto invalid;
+      }        
   case '2':
     goto District02;
-  case '3':                                                                          
+  case '3':    
     goto District19;
-  case '4':                                                                          
+  case '4':        
     goto District01;
   case '5':
     goto District5;
@@ -1256,8 +1256,8 @@ switch(cur)
   case '1':
     goto District01;
   case '2':
-  case '3':                                                                          
-  case '4':                                                                          
+  case '3':
+  case '4':     
   case '5':
   case '6':
   case '7':
@@ -1296,9 +1296,9 @@ switch(cur)
     goto EC1;
   case '2':
     goto EC2;
-  case '3':                                                                          
+  case '3': 
     goto EC3;
-  case '4':                                                                          
+  case '4': 
     goto EC4;
   case '5':
     goto District0;
@@ -1314,7 +1314,7 @@ switch(cur)
   case '1':
   case '2':
   case '3':
-  case '4':                                                                          
+  case '4':       
     goto DistrictFull;
   case '5':
     goto District15;
@@ -1335,8 +1335,8 @@ switch(cur)
   case '1':
     goto District01;
   case '2':
-  case '3':                                                                          
-  case '4':                                                                          
+  case '3':
+  case '4':
   case '5':
   case '6':
     goto valid;
@@ -1360,7 +1360,7 @@ switch(cur)
     goto District04;
   case '3':
     goto District19;
-  case '4':                                                                          
+  case '4': 
   case '5':
   case '6':
   case '7':
@@ -1380,8 +1380,8 @@ switch(cur)
     goto E1;
   case '2':
     goto District0;
-  case '3':                                                                          
-  case '4':                                                                          
+  case '3':
+  case '4':
   case '5':
   case '6':
     goto valid;
@@ -1405,8 +1405,8 @@ switch(cur)
     goto DistrictFull;
   case '2':
     goto District01;
-  case '3':                                                                          
-  case '4':                                                                          
+  case '3':
+  case '4':
   case '5':
   case '6':
   case '7':
@@ -1423,10 +1423,139 @@ goto District08;
 
 //G
 Gloucester:
+
+switch(cur)
+  {
+  case '1':
+    goto DistrictFull;
+  case '2':
+    goto District0;
+  case '3':
+  case '4':
+    goto valid;
+  case '5':
+    goto District06;
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
+
 Guilford:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '2':
+    goto DistrictFull;
+  case '3':
+    goto District05;
+  case '4':
+    goto District47;
+  case '5':
+    goto District12;
+  case '6':
+  case '7':
+  case '8':
+    goto valid;
+  case '9':
+    goto District5;
+  default:
+    goto invalid;
+  }
+
+
 Gournsey:
+
+switch(cur)
+  {
+  case '1':
+    goto District0;
+  case '2':
+  case '3':
+  case '4':
+  case '5':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
+
 Glasgow:
-Girobank: //GIR:
+
+switch(cur)
+  {
+  case '1':
+    goto District15;
+  case '2':
+    goto District03;
+  case '3':
+    goto District14;
+  case '4':
+    goto District06;
+  case '5':
+    //next cur
+    switch(cur)
+      {
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '8':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '6':
+  case '7':
+    goto DistrictOnlyFull;
+  case '8':
+    goto DistrictOnly14;
+  case '9':
+    goto District0;
+  default:
+    goto invalid;
+  }
+
+
+Girobank: //GIR: 
+// Non-Geographic Girobank post code
+// Only valid GIR postcode is GIR 0AA;
+//next cur
+if(cur == '0')
+  {
+    //next cur
+    if(cur == 'A')
+      {
+	if(cur == 'A')
+	  {
+	    goto valid;
+	  }
+      }
+  }
+goto invalid;
 
 //H
 Harrow:
