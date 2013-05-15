@@ -1559,28 +1559,289 @@ goto invalid;
 
 //H
 Harrow:
+goto DistrictFull;
+
 Huddersfield:
+goto District19;
+
 Harrogate:
+goto District15;
+
 HemelHempstead:
+//next cur
+switch(cur)
+  {
+  case '1':
+    goto DistrictFull;
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '7':
+	goto valid;
+      default:
+	// 2 is valid
+	goto invalid;
+      }
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 Hereford:
+goto District19;
+
 OuterHebrides:
+goto District19;
 Hull:
+
+switch(cur)                                                                                                   {                                                                                                           case '1':
+    goto DistrictFull
+  case '2':
+    goto District0;
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 Halifax:
+goto District17;
 
 //I
 Ilford:
+// next  cur
+switch(cur)
+  {
+  case '1':
+    goto District01;
+  case '2':
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid:
+  default:
+    goto invalid;
+  }
+
 IsleOfMan:
+// next  cur
+switch(cur)
+  {
+  case '1':
+  case '2':
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+    goto valid;
+  case '8':
+    goto District67;
+  case '9':
+    goto District99;
+  default:
+    goto invalid;
+  }
+
 Ipswich:
+switch(cur)
+  {
+  case '1':
+    goto DistrictFull;
+  case '2':
+    goto DistrictFull;
+  case '3':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+	goto valid;
+      default:
+	// 3 is valid
+	goto invalid;
+      }
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+    goto valid;
+  case '9':
+    //next cur
+    switch(cur)
+      {
+      case: '8':
+	goto valid;
+      default:
+	// 9 is valid
+	goto invalid;
+      }
+  default:
+    goto invalid;
+  }
+
+
 Inverness:
+// next curr
+switch(cur)
+  {
+  case '1':
+    goto DistrictFull;
+  case '2':
+    goto District08;
+  case '3':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '6':
+	goto valid;
+      default:
+	// 3 is valid
+	goto invalid;
+      }
+  case '4':
+    goto DistrictFull;
+  case '5':
+    goto District15;
+    // 5 is valid
+  case '6':
+    //next cur
+    switch(cur)
+      {
+      case: '3':
+	goto valid;
+      default:
+	// 6 is valid
+	goto invalid;
+      }
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 
 //J
 Jersey:
+goto District15;
 
 //K
 Kilmarnock:
+
+switch(cur)
+  {
+  case '1':
+    goto DistrictFull;
+  case '2':
+    goto DistrictFull;
+  case '3':
+    switch(cur)
+      {
+      case: '0':
+	goto valid;
+      default:
+	// 3 is valid
+	goto invalid;
+      }
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 Kingston:
+    //next cur
+switch(cur)
+  {
+  case '1':
+    goto DistrickFull;
+  case '2':
+    goto District24;
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 Kirkwall:
+// next cur
+switch(cur)
+  {
+  case '1':
+    goto District07;
+  case '2':
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 Kirkcaldy:
+
+switch(cur)
+{
+ case '1':
+   goto District06;
+ case '2':
+ case '3':
+ case '4':
+ case '5':
+ case: '6':
+ case '7':
+ case '8':
+       goto valid;
+ case '9':
+   goto District9;
+ default:
+   goto invalid;
+}
 
 //L
 Lancaster:
