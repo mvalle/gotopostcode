@@ -8,57 +8,57 @@ if(cur > 90)
 // First Character
 switch(cur)
   {
-  case 'A': 
+  case 'A':
     goto A;
-  case 'B': 
+  case 'B':
     goto B;
-  case 'C': 
+  case 'C':
     goto C;
-  case 'D': 
+  case 'D':
     goto D;
-  case 'E': 
+  case 'E':
     goto E;
-  case 'F': 
+  case 'F':
     goto F;
-  case 'G': 
+  case 'G':
     goto G;
-  case 'H': 
+  case 'H':
     goto H;
-  case 'I': 
+  case 'I':
     goto I;
-  case 'J': 
+  case 'J':
     goto J;
-  case 'K': 
+  case 'K':
     goto K;
-  case 'L': 
+  case 'L':
     goto L;
-  case 'M': 
+  case 'M':
     goto M;
-  case 'N': 
+  case 'N':
     goto N;
-  case 'O': 
+  case 'O':
     goto O;
-  case 'P': 
+  case 'P':
     goto P;
-    //  case 'Q': 
+    //  case 'Q':
     //    goto Q;
-  case 'R': 
+  case 'R':
     goto R;
-  case 'S': 
+  case 'S':
     goto S;
-  case 'T': 
+  case 'T':
     goto T;
-  case 'U': 
+  case 'U':
     goto U;
     //  case 'V':
     //    goto V;
-  case 'W': 
+  case 'W':
     goto W;
-    //  case 'X': 
+    //  case 'X':
     //    goto X;
-  case 'Y': 
+  case 'Y':
     goto Y;
-  case 'Z': 
+  case 'Z':
     goto Z;
   default:
     goto invalid;
@@ -92,7 +92,7 @@ switch(cur)
     goto Brighton;
   case 'R':
     goto Bromley;
-  case 'S': 
+  case 'S':
     goto Bristol; // And TV Licencing special PC
   case 'T':
     goto Belfast;
@@ -107,7 +107,7 @@ switch(cur)
 C:
 //next cur
 switch(cur)
-  {    
+  {
   case 'A':
     goto Carlisle;
   case 'B':
@@ -137,21 +137,21 @@ switch(cur)
   {
   case 'A':
     goto Dartford;
-  case 'D': 
+  case 'D':
     goto Dundee;
-  case 'E': 
+  case 'E':
     goto Derby;
-  case 'G': 
+  case 'G':
     goto DumfriesAndGalloway;
-  case 'H': 
+  case 'H':
     goto Durham;
-  case 'L': 
+  case 'L':
     goto Darlington;
-  case 'N': 
+  case 'N':
     goto Doncaster;
-  case 'T': 
+  case 'T':
     goto Dorchester;
-  case 'Y': 
+  case 'Y':
     goto Dudley;
   default:
     goto invalid;
@@ -255,17 +255,17 @@ switch(cur)
   {
   case 'A':
    goto Lancaster;
-  case 'D': 
+  case 'D':
     goto LlandindodWells;
-  case 'E': 
+  case 'E':
     goto Leicester;
   case 'L':
     goto Llandudno;
-  case 'N': 
-    goto Lincoln;   
-  case 'S': 
-    goto Leeds;     
-  case 'U': 
+  case 'N':
+    goto Lincoln;
+  case 'S':
+    goto Leeds;
+  case 'U':
     goto Luton;
   default:
     if(cur > 47 && cur < 58)
@@ -290,17 +290,17 @@ N:
 //next cur
 switch(cur)
   {
-  case 'E': 
+  case 'E':
     goto NewcastkeUponTyne;
-  case 'G': 
+  case 'G':
     goto Nottingham;
-  case 'N': 
+  case 'N':
     goto Northampton;
-  case 'P': 
+  case 'P':
     goto Newport;
-  case 'R': 
+  case 'R':
     goto Norwich;
-  case 'W': 
+  case 'W':
     goto LondonNorthWest;
   default:
     if(cur > 47 && cur < 58)
@@ -320,17 +320,17 @@ P:
 //next cur
 switch(cur)
   {
-  case 'A': 
+  case 'A':
     goto Paisley;
-  case 'E': 
-    goto Peterborough;           
-  case 'H': 
-    goto Perth;            
-  case 'L': 
-    goto Plymouth; 
-  case 'O': 
+  case 'E':
+    goto Peterborough;
+  case 'H':
+    goto Perth;
+  case 'L':
+    goto Plymouth;
+  case 'O':
     goto Portsmouth;
-  case 'R': 
+  case 'R':
     goto Preston;
   default:
     goto invalid;
@@ -350,33 +350,33 @@ S:
 //next cur
 switch(cur)
   {
-  case 'A': 
+  case 'A':
     goto Swansea;
-  case 'E': 
-    goto LondonSouthEastern;      
-  case 'G': 
-    goto Stevenage;      
-  case 'K': 
-    goto Stockport;            
-  case 'L': 
-    goto Slough;                   
-  case 'M': 
-    goto Sutton;       
-  case 'N': 
-    goto Swindon;   
-  case 'O': 
-    goto Southampton;             
-  case 'P': 
-    goto Salisbury;        
-  case 'R': 
-    goto Sunderland;     
-  case 'S': 
-    goto SouthendOnSea;        
-  case 'T': 
+  case 'E':
+    goto LondonSouthEastern;
+  case 'G':
+    goto Stevenage;
+  case 'K':
+    goto Stockport;
+  case 'L':
+    goto Slough;
+  case 'M':
+    goto Sutton;
+  case 'N':
+    goto Swindon;
+  case 'O':
+    goto Southampton;
+  case 'P':
+    goto Salisbury;
+  case 'R':
+    goto Sunderland;
+  case 'S':
+    goto SouthendOnSea;
+  case 'T':
     goto StokeOnTrent;
-  case 'W': 
+  case 'W':
     goto SouthWesternAndBattersea;
-  case 'Y': 
+  case 'Y':
     goto Shrewsbury;
   default:
     if(cur > 47 && cur < 58)
@@ -387,23 +387,23 @@ switch(cur)
 T:
 switch(cur)
   {
-  case 'A': 
+  case 'A':
     goto Taunton;
-  case 'D': 
+  case 'D':
     goto Galashiels;
-  case 'F': 
+  case 'F':
     goto Telford;
-  case 'N': 
+  case 'N':
     goto Tonbridge;
-  case 'Q': 
-    goto Torquay;  
-  case 'R': 
-    goto Truro;    
-  case 'S': 
+  case 'Q':
+    goto Torquay;
+  case 'R':
+    goto Truro;
+  case 'S':
     goto Cleveland;
-  case 'W': 
+  case 'W':
     goto Twickenham;
-  default: 
+  default:
     goto invalid;
   }
 
@@ -415,22 +415,22 @@ goto invalid;
 W:
 switch(cur)
   {
-  case 'A': 
+  case 'A':
     goto Warrington;
-  case 'C': 
+  case 'C':
     goto LondonWestCenteral;
-  case 'D': 
-    goto Watford;           
-  case 'F': 
-    goto Wakefield;         
-  case 'N': 
-    goto Wigan;             
-  case 'R': 
-    goto Worcester;         
-  case 'S': 
-    goto Walsall;           
-  case 'V': 
-    goto Wolverhampton;     
+  case 'D':
+    goto Watford;
+  case 'F':
+    goto Wakefield;
+  case 'N':
+    goto Wigan;
+  case 'R':
+    goto Worcester;
+  case 'S':
+    goto Walsall;
+  case 'V':
+    goto Wolverhampton;
   default:
     if(cur > 47 && cur < 58)
       goto LondonWest;
@@ -464,7 +464,7 @@ switch(cur)
    goto District15;
  case '5':
    goto District16;
- case '9': 
+ case '9':
    //next cur
    if(cur == '9') // Non-geographic for Aberdeen City
      goto valid;
@@ -474,15 +474,15 @@ switch(cur)
 
 StAlbans:
 //next cur
-switch(cur) 
+switch(cur)
   {
   case '1':
    //next cur
-    switch(cur) 
+    switch(cur)
       {
       case: '0':
 	goto valid;
-      default: 
+      default:
 	goto invalid;
       }
   case '2':
@@ -507,16 +507,16 @@ switch(cur) {
    goto District06;
  case '2':
    goto District02;
- case '3': 
- case '4':    
+ case '3':
+ case '4':
  case '5':
  case '6':
  case '7':
  case '8':
  case '9':
    goto valid;
-   
- default: 
+
+ default:
    goto invalid;
  }
 
@@ -538,7 +538,7 @@ switch(cur) {
    }
  case '2':
  case '3':
- case '4': 
+ case '4':
  case '5':
  case '6':
  case '7':
@@ -549,7 +549,7 @@ switch(cur) {
    switch(cur) {
    case: '4':
      goto valid;
-   default: 
+   default:
      goto invalid;
    }
  default:
@@ -575,13 +575,13 @@ switch(cur) {
    goto invalid;
  case '9':
    //next cur
-   switch(cur) 
+   switch(cur)
      {
      case: '7':
      case: '8':
      case: '9':
        goto valid;
-     default: 
+     default:
        goto invalid;
      }
  default:
@@ -593,7 +593,7 @@ goto NotImplemented;
 
 Bournemouth:
 //next cur
-switch(cur) 
+switch(cur)
   {
   case '1':
     goto DistrictFull;
@@ -607,13 +607,13 @@ switch(cur)
   case '8':
   case '9':
     goto valid;
-  default: 
+  default:
     goto invalid;
   }
 
 Bolton:
 //next cur
-switch(cur) 
+switch(cur)
 {
  case '0':
    goto valid;
@@ -648,7 +648,7 @@ switch(cur) {
    goto District07;
  case '3':
    goto valid;
- case '4':    
+ case '4':
    goto District14;
  case '5':
    goto District02;
@@ -692,23 +692,23 @@ switch(cur) {
  case '3':
    //next cur
    switch(cur)
-     {           
+     {
      case: '0':
-     case: '1': 
-     case: '2': 
-     case: '4': 
-     case: '5': 
-     case: '6': 
-     case: '7': 
-     case: '9': 
+     case: '1':
+     case: '2':
+     case: '4':
+     case: '5':
+     case: '6':
+     case: '7':
+     case: '9':
        goto valid;
-     default: 
-       goto invalid;    
-     }                  
- case '4':            
-   //next cur         
+     default:
+       goto invalid;
+     }
+ case '4':
+   //next cur
    switch(cur)
-     {            
+     {
      case: '0':
      case: '1':
      case: '8':
@@ -871,7 +871,7 @@ Cardiff:
 switch(cur)
   {
     // no CF1, but CF10, CF11, CF14, CF15
-  case '1': 
+  case '1':
     //next cur
     switch(cur)
       {
@@ -1084,8 +1084,8 @@ switch(cur)
   case '1':
     goto District08;
   case '2':
-  case '3':                                                                          
-  case '4':                                                                          
+  case '3':
+  case '4':
   case '5':
   case '6':
   case '7':
@@ -1104,7 +1104,7 @@ switch(cur)
   case '1':
     goto District01;
   case '2':
-  case '3':                                                                          
+  case '3':
   case: '4':
   case: '5':
   case: '6':
@@ -1124,7 +1124,7 @@ switch(cur)
     goto District15;
   case '2':
     goto DistrictOnly14;
-  case '3':            
+  case '3':
     goto valid;
   case '4':
     goto District5;
@@ -1177,8 +1177,8 @@ switch(cur)
   {
   case '1':
   case '2':
-  case '3':                      
-  case '4':   
+  case '3':
+  case '4':
   case '5':
   case '6':
   case '7':
@@ -1231,12 +1231,12 @@ switch(cur)
 	goto valid;
       default:
 	goto invalid;
-      }        
+      }
   case '2':
     goto District02;
-  case '3':    
+  case '3':
     goto District19;
-  case '4':        
+  case '4':
     goto District01;
   case '5':
     goto District5;
@@ -1257,7 +1257,7 @@ switch(cur)
     goto District01;
   case '2':
   case '3':
-  case '4':     
+  case '4':
   case '5':
   case '6':
   case '7':
@@ -1296,9 +1296,9 @@ switch(cur)
     goto EC1;
   case '2':
     goto EC2;
-  case '3': 
+  case '3':
     goto EC3;
-  case '4': 
+  case '4':
     goto EC4;
   case '5':
     goto District0;
@@ -1314,7 +1314,7 @@ switch(cur)
   case '1':
   case '2':
   case '3':
-  case '4':       
+  case '4':
     goto DistrictFull;
   case '5':
     goto District15;
@@ -1360,7 +1360,7 @@ switch(cur)
     goto District04;
   case '3':
     goto District19;
-  case '4': 
+  case '4':
   case '5':
   case '6':
   case '7':
@@ -1540,7 +1540,7 @@ switch(cur)
   }
 
 
-Girobank: //GIR: 
+Girobank: //GIR:
 // Non-Geographic Girobank post code
 // Only valid GIR postcode is GIR 0AA;
 //next cur
@@ -1606,7 +1606,9 @@ OuterHebrides:
 goto District19;
 Hull:
 
-switch(cur)                                                                                                   {                                                                                                           case '1':
+switch(cur)
+  {
+  case '1':
     goto DistrictFull
   case '2':
     goto District0;
@@ -1765,14 +1767,7 @@ switch(cur)
   case '2':
     goto DistrictFull;
   case '3':
-    switch(cur)
-      {
-      case: '0':
-	goto valid;
-      default:
-	// 3 is valid
-	goto invalid;
-      }
+    goto District0;
   case '4':
   case '5':
   case '6':
@@ -1836,7 +1831,7 @@ switch(cur)
  case: '6':
  case '7':
  case '8':
-       goto valid;
+   goto valid;
  case '9':
    goto District9;
  default:
@@ -1845,28 +1840,416 @@ switch(cur)
 
 //L
 Lancaster:
+
+switch(cur)
+  {
+  case '1':
+    goto DistructFull;
+  case '2':
+    goto District03;
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 LlandindodWells:
+goto District18;
+
 Leicester:
+
+switch(cur)
+  {
+  case '1':
+    goto DistrictFull;
+  case '2':
+    goto District1;
+  case '3':
+    goto valid;
+  case '4':
+    goto District1;
+  case '5':
+    goto District5;
+  case '6':
+    //next cur
+    switch(cur)
+      {
+      case: '5':
+      case: '7':
+	goto valid;
+      default:
+	// 6 is valid
+	goto invalid;
+      }
+  case '7':
+    goto valid;
+  case '8':
+    goto District7;
+  case '9':
+    goto District45;
+  default;
+    goto invalid;
+  }
+
+
 Llandudno:
+
+switch(cur)
+  {
+  case '1':
+    goto DistrictOnlyFull;
+  case '2':
+    goto DistrictOnlyFull;
+  case '3':
+    goto DistrictOnlyFull;
+  case '4':
+    goto DistrictOnlyFull;
+  case '5':
+    goto DistrictOnly19;
+  case '6':
+    goto DistrictOnlyFull;
+  case '7':
+    goto DistrictOnly08;
+  default:
+    goto invalid;
+  }
+
+
 Lincoln:
+
+switch(cur)
+  {
+  case '1':
+    goto District03;
+  case '2':
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 Leeds:
+
+switch(cur)
+  {
+  case '1':
+    goto DistrictFull;
+  case '2':
+    goto DistrictFull;
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+    goto valid;
+  case '9':
+    goto District8;
+  default:
+    goto invalid;
+  }
+
 Luton:
+goto District07;
+
 Liverpool:
+
+switch(cur)
+  {
+  case '1':
+    goto DistrictFull;
+  case '2':
+    goto DistrictFull;
+  case '3':
+    goto DistrictFull;
+  case '4':
+    goto District0;
+  case '5':
+    goto valid;
+  case '6':
+    goto District79;
+  case '7':
+    goto District05;
+  case '8':
+    goto District0;
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
+
 
 //M
 Rochester:
+
+switch(cur)
+  {
+  case '1':
+    goto DistrictFull;
+  case '2':
+    goto District0;
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 MiltonKeynes:
+
+switch(cur)
+  {
+  case '1':
+    goto DistrictFull;
+  case '2':
+  case '3':
+    goto valid;
+  case '4':
+    //next cur
+    goto District06;
+  case '5':
+  case '6':
+    goto valid;
+  case '7':
+    goto District7;
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 Motherwell:
+
+switch(cur)
+  {
+  case '1':
+    goto District02;
+  case '2':
+  case '3':
+  case '4':                                                                     
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 Manchester:
+
+switch(cur)
+  {
+  case '1':
+    goto District19;
+  case '2':
+    goto DistrictFull;
+  case '3':
+    //next cur 
+    switch(cur)
+      {        
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '8':
+	goto valid;
+      default:     
+	// 3 is valid
+	goto invalid;
+      }
+  case '4':                                                                     
+    goto District06;
+  case '5':
+    goto District0;
+  case '6':
+    goto District0;
+  case '7':
+  case '8':
+    goto valid;
+  case '9':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '9':
+	goto valid;
+      default:
+	// 9 is valid
+	goto invalid;
+      }
+  default:
+    goto invalid;
+  }
+
 
 //N
 NewcastkeUponTyne:
+
+switch(cur)
+  {
+  case '1':
+    goto DistrictFull;
+  case '2':
+    goto DistrictFull;
+  case '3':
+    goto DistrictFull;
+  case '4':
+    goto DistrictFull;
+  case '5':
+    goto valid;
+  case '6':
+    goto DistrictFull;
+  case '7':
+    goto District01;
+  case '8':
+    //next cur
+    switch(cur)
+      {
+      case: '2':
+      case: '3':
+      case: '5':
+      case: '8':
+	goto valid;
+      default:
+	// 8 is valid
+	goto invalid;
+      }
+  case '9':
+    //next cur
+    switch(cur)
+      {
+      case: '2':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	// 9 is valid
+	goto invalid;
+      }
+  default:
+    goto invalid;
+  }
+
 Nottingham:
+
+switch(cur)
+  {
+  case '1':
+    goto DistrictFull;
+  case '2':
+    goto District05;
+  case '3':
+    goto District14;
+  case '4':
+  case '5':
+  case '6':
+    goto valid;
+  case '7':
+    goto District0;
+  case '8':
+    goto District0;
+  case '9':
+    goto District0;
+  default:
+    goto invalid;
+  }
+
 Northampton:
+
+switch(cur)
+  {
+  case '1':
+    goto District08;
+  case '2':
+    goto District9;
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+    goto valid;
+  case '9':
+    goto District9;
+  default:
+    goto invalid;
+  }
+
 Newport:
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '5':
+      case: '6':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:
+	// 1 is not valid
+	goto invalid;
+      }
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+	goto valid;
+      default:
+	// 2 is not valid
+	goto invalid;
+      }
+  case '4':        
+    goto District4;
+  case '7':
+  case '8':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 Norwich:
+
 LondonNorthWest:
+
 LondonNorth:
+
+
+
 
 //O
 Oldham:
@@ -1936,7 +2319,7 @@ goto District13;
 
 DistrictFull:
 //next cur
-switch(cur) 
+switch(cur)
   {
   case: '0':
   case: '1':
@@ -1949,12 +2332,12 @@ switch(cur)
   case: '8':
   case: '9':
     goto valid;
-  default: 
+  default:
     goto invalid;
   }
 District08:
 //next cur
-switch(cur) 
+switch(cur)
   {
   case: '0':
   case: '1':
@@ -1966,12 +2349,12 @@ switch(cur)
   case: '7':
   case: '8':
     goto valid;
-  default: 
+  default:
     goto invalid;
   }
 District07:
 //next cur
-switch(cur) 
+switch(cur)
   {
   case: '0':
   case: '1':
@@ -1982,12 +2365,12 @@ switch(cur)
   case: '6':
   case: '7':
     goto valid;
-  default: 
+  default:
     goto invalid;
   }
 District06:
 //next cur
-switch(cur) 
+switch(cur)
   {
   case: '0':
   case: '1':
@@ -1997,13 +2380,13 @@ switch(cur)
   case: '5':
   case: '6':
     goto valid;
-  default: 
+  default:
     goto invalid;
   }
 
 District05:
 //next cur
-switch(cur) 
+switch(cur)
   {
   case: '0':
   case: '1':
@@ -2012,12 +2395,12 @@ switch(cur)
   case: '4':
   case: '5':
     goto valid;
-  default: 
+  default:
     goto invalid;
   }
 District04:
 //next cur
-switch(cur) 
+switch(cur)
   {
   case: '0':
   case: '1':
@@ -2025,46 +2408,46 @@ switch(cur)
   case: '3':
   case: '4':
     goto valid;
-  default: 
+  default:
     goto invalid;
   }
 
 District02:
 //next cur
-switch(cur) 
+switch(cur)
   {
   case: '0':
   case: '1':
   case: '2':
     goto valid;
-  default: 
+  default:
     goto invalid;
   }
 District01:
 //next cur
-switch(cur) 
+switch(cur)
   {
   case: '0':
   case: '1':
     goto valid;
-  default: 
+  default:
     goto invalid;
   }
 District14:
 //next cur
-switch(cur) 
+switch(cur)
   {
   case: '1':
   case: '2':
   case: '3':
   case: '4':
     goto valid;
-  default: 
+  default:
     goto invalid;
   }
 District15:
 //next cur
-switch(cur) 
+switch(cur)
   {
   case: '1':
   case: '2':
@@ -2072,12 +2455,12 @@ switch(cur)
   case: '4':
   case: '5':
     goto valid;
-  default: 
+  default:
     goto invalid;
   }
 District16:
 //next cur
-switch(cur) 
+switch(cur)
   {
   case: '1':
   case: '2':
@@ -2085,27 +2468,27 @@ switch(cur)
   case: '4':
   case: '5':
     goto valid;
-  default: 
+  default:
     goto invalid;
   }
 DistrictOnly23:
 //next cur
-switch(cur) 
+switch(cur)
   {
   case: '2':
   case: '3':
     goto valid;
-  default: 
+  default:
     goto invalid;
   }
 District89:
 //next cur
-switch(cur) 
+switch(cur)
   {
   case: '8':
   case: '9':
     goto valid;
-  default: 
+  default:
     goto invalid;
   }
 District9:
@@ -2147,7 +2530,7 @@ switch(cur)
 
 DistrictFull:
 //next cur
-switch(cur) 
+switch(cur)
   {
   case: '0':
   case: '1':
@@ -2160,7 +2543,7 @@ switch(cur)
   case: '8':
   case: '9':
     goto valid;
-  default: 
+  default:
     goto invalid;
   }
 
