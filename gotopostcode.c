@@ -2244,16 +2244,240 @@ switch(cur)
 
 Norwich:
 
+switch(cur)
+  {
+  case '1':
+    goto DistrictFull;
+  case '2':
+    goto DistrictFull;
+  case '3':                                                                       
+    //next cur
+    switch(cur) 
+      {         
+      case: '0':
+      case: '1':    
+      case: '2':       
+      case: '3':
+      case: '4':              
+      case: '5':                                                                  
+	goto valid;
+      default:
+	// 3 is valid
+	goto invalid; 
+      } 
+                                                                          
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+    goto valid;
+  case '9':
+    //next cur
+    switch(cur)
+      {
+      case: '9':
+	goto valid;
+      default:
+	// 9 is valid
+	goto invalid;
+      }
+  default:
+    goto invalid;
+  }
+
+
 LondonNorthWest:
 
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: 'W':
+      case: 'w':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case: '6':
+	goto valid;
+      default:
+	//2 is valid
+        goto invalid;
+      }
+  case '3':                                                                       
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 LondonNorth:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+      case: 'C':
+      case: 'c':
+      case: 'P':
+      case: 'p':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+	goto valid;
+      default:                                                                     
+	// 
+	goto invalid;                                                                
+      }                                                                             
+  case '3':                                                                       
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
 
 
 
 
 //O
 Oldham:
+
+
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '1':
+      case: '2':
+      case: '3':
+      case: '4':
+      case: '5':
+      case: '6':
+	goto valid;
+      default:
+	// 1 is valid
+	goto invalid;
+      }
+  case '2':
+  case '3':                                                                       
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+    goto valid;
+  case '9':
+    //next cur
+    switch(cur)
+      {
+      case: '5':
+	goto valid;
+      default:
+	// 9 is valdi
+	goto invalid;
+      }
+  default:
+    goto invalid;
+  }
+
+
+
+
 Oxford:
+
+
+switch(cur)
+  {
+  case '1':
+    goto District08
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case: '0':
+      case: '5':
+      case: '6':
+      case: '7':
+      case: '8':
+      case: '9':
+	goto valid;
+      default:                                                                     
+	// 2 is valid
+	goto invalid;                                                                
+      }                                                                             
+  case '3':                                                                       
+    //next cur
+    switch(cur)                                                                     
+      {                                                                              
+      case: '3':                                                                   
+      case: '9':                                                                   
+	goto valid;                                                                  
+      default:                                                                     
+	//3 is valid
+	goto invalid;                                                                
+      }                                                                             
+  case '4':
+    //next cur
+    switch(cur)
+      {
+      case: '4':
+      case: '9':
+	goto valid;
+      default:
+	// 4 is valid
+	goto invalid;
+      }
+  case '5':
+  case '7':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 
 //P
 Paisley:
