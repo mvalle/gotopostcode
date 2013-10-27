@@ -2851,10 +2851,126 @@ case '9':
 
 //S
 Swansea:
+switch(cur)
+ {
+case '1':
+  goto DistrictFull;
+case '2':
+//next cur
+switch(cur)
+ {
+ case: '0':
+   goto valid;
+ default: // 2 is valid
+   goto invalid;
+  }
+case '3':
+  goto District19
+case '4':
+  goto District08;
+case '5':
+  goto valid;
+case '6':
+  goto District19;
+case '7':
+  goto District03;
+case '8':
+//next cur
+switch(cur)
+ {
+   case: '0':
+   goto valid;
+ default:// 8 is valid
+   goto invalid;
+  }
+case '9':
+//next cur
+switch(cur)
+ {
+   case: '9':
+   goto valid;
+ default: // 9 is valid
+   goto invalid;
+  }
+  default:
+    goto invalid;
+}
+
+
+
 LondonSouthEastern:
+switch(cur)
+ {
+ case '1':
+   goto SE1;
+ case '2':
+   goto District08;
+ case '3':
+ case '4':
+ case '5':
+ case '6':
+ case '7':
+ case '8':
+ case '9':
+   goto valid
+ default:
+   goto invalid;
+}
+
+
 Stevenage:
+switch(cur)
+ {
+ case '1':
+   goto DistrictFull;
+ case '2':
+ case: '3':
+ case: '4':
+ case: '5':
+ case: '6':
+ case: '7':
+ case: '8':
+ case: '9':
+   goto valid;
+ default:
+   goto invalid;
+ }
+
+
+
 Stockport:
+switch(cur)
+ {
+case '1':
+//next cur
+  goto District07;
+case '2':
+//next cur
+switch(cur)
+ {
+ case: '2':
+ case: '3':
+   goto valid;
+ default: // 2 is valid
+   goto invalid;
+  }
+ case '3':
+ case '4':
+ case '5':
+ case: '6':
+ case '7':
+ case '8':
+ case '9':
+   goto valid;
+ default:
+   goto invalid;
+}
+
+
 Slough:
+goto DistrictFull;
+//95
+
 Sutton:
 Swindon:
 Southampton:
