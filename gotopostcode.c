@@ -2444,21 +2444,22 @@ switch(cur)
       case: '8':
       case: '9':
 	goto valid;
-      default:                                                                     
+      default:     
 	// 2 is valid
-	goto invalid;                                                                
-      }                                                                             
-  case '3':                                                                       
+	goto invalid;
+      }                                                                         
+
+  case '3':  
     //next cur
-    switch(cur)                                                                     
-      {                                                                              
-      case: '3':                                                                   
-      case: '9':                                                                   
-	goto valid;                                                                  
-      default:                                                                     
+    switch(cur)            
+      {                    
+      case: '3':           
+      case: '9':           
+	goto valid;        
+      default:             
 	//3 is valid
-	goto invalid;                                                                
-      }                                                                             
+	goto invalid;      
+      }                    
   case '4':
     //next cur
     switch(cur)
@@ -2481,16 +2482,372 @@ switch(cur)
 
 //P
 Paisley:
+switch(cur)
+ {
+case '1':
+case '2':
+  goto DistrictFull;
+case '3':
+  goto District08
+case '4':
+  goto District19
+case '5':
+  goto valid;
+case '6':
+  goto DistrictFull;
+case '7':
+  goto District08;
+case '8':
+switch(cur)
+ {
+   case: '0':
+     goto valid;
+ default: // 8 is valid
+     goto invalid;
+  }
+ case '9':
+   goto valid;
+ default:
+   goto invalid;
+}
+
 Peterborough:
+switch(cur)
+ {
+case '1':
+//next cur
+switch(cur)
+ {
+   case: '0':
+   case: '1':
+   case: '2':
+   case: '3':
+   case: '4':
+   case: '5':
+   case: '6':
+   case: '9':
+     goto valid;
+   default:
+     goto invalid;
+  }
+case '2':
+  goto DistrictFull;
+case '3':
+//next cur
+switch(cur)
+ {
+   case: '0':
+   case: '1':
+   case: '2':
+   case: '3':
+   case: '4':
+   case: '5':
+   case: '6':
+   case: '7':
+   case: '8':
+     goto valid;
+   default:
+     goto invalid;
+  }
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+  goto valid;
+case '9':
+  goto District9;
+ default:
+   goto invalid;
+}
+
+
 Perth:
+switch(cur)
+ {
+case '1':
+  goto DistrictFull;
+case '2':
+//next cur
+switch(cur)
+ {
+ case: '0':
+ case: '1':
+ case: '2':
+ case: '3':
+ case: '4':
+ case: '5':
+ case: '6':
+   goto valid;
+ default:
+   goto invalid;
+ }
+case '3':
+  goto DistrictFull;
+case '4':
+//next cur
+switch(cur)
+ {
+   case: '0':
+   case: '1':
+   case: '2':
+   case: '3':
+   case: '4':
+   case: '9':
+     goto valid;
+ default:
+   goto invalid;
+  }
+case '5':
+//next cur
+switch(cur)
+ {
+ case: '0':
+   goto valid;
+ default: // 5 is valid
+   goto invalid;
+  }
+case '6':
+case '7':
+case '8':
+case '9':
+  goto valid;
+ default:
+   goto invalid;
+}
+
+
 Plymouth:
+switch(cur)
+ {
+case '1':
+  goto DistrictFull;
+case '2':
+  goto DistrictFull;
+case '3':
+//next cur
+switch(cur)
+ {
+   case: '0':
+   case: '1':
+   case: '2':
+   case: '3':
+   case: '4':
+   case: '5':
+     goto valid;
+ default: // 3 is valid
+   goto invalid;
+  }
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+  goto valid;
+case '9':
+//next cur
+switch(cur)
+ {
+   case: '5':
+     goto valid;
+ default: // 9 is valid
+   goto invalid;
+  }
+  default:
+    goto invalid;
+}
+
+
 Portsmouth:
+switch(cur)
+ {
+case '1':
+  goto DistrictFull;
+case '2':
+//next cur
+switch(cur)
+ {
+   case: '0':
+   case: '1':
+   case: '2':
+     goto valid;
+ default: //2 is valid
+   goto invalid;
+  }
+case '3':
+  goto DistrictFull;
+case '4':
+//next cur
+switch(cur)
+ {
+   case: '0':
+   case: '1':
+     goto valid;
+ default: // 4 is valid
+     goto invalid;
+  }
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+  goto valid;
+ default:
+   goto invalid;
+}
+
 Preston:
+
+switch(cur)
+ {
+ case '0':
+   goto valid;
+case '1':
+//next cur
+switch(cur)
+ {
+   case: '1':
+     goto valid;
+ default:
+   goto invalid;
+  }
+case '2':
+//next cur
+switch(cur)
+ {
+   case: '5':
+   case: '6':
+     goto valid;
+ default: //2 is valid
+   goto invalid;
+  }
+ case '3':
+ case '4':
+ case '5':
+ case '6':
+ case '7':
+ case '8':
+ case '9':
+   goto valid;
+ default:
+    goto invalid;
+}
 
 //R
 Reading:
+switch(cur)
+ {
+case '1':
+//next cur
+switch(cur)
+ {
+ case: '0':
+ case: '2':
+ case: '4':
+ case: '7':
+ case: '8':
+ case: '9':
+   goto valid;
+ default: // 1 is valid
+   goto invalid;
+  }
+case '2':
+  goto DistrictFull;
+case '3':
+//next cur
+switch(cur)
+ {
+   case: '0':
+   case: '1':
+     goto valid;
+ default: // 3 is invalid
+     goto invalid;
+  }
+case '4':
+//next cur
+switch(cur)
+ {
+   case: '0':
+   case: '1':
+   case: '2':
+   case: '5':
+     goto valid; 
+ default: // 4 is valid
+     goto invalid;
+  }
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+  goto valid;
+ default:
+   goto invalid;
+}
+
+
 Redhill:
+switch(cur)
+ {
+case '1':
+//next cur
+switch(cur)
+ {
+ case: '1': // non-geographic
+ case: '4':
+     goto valid;
+ default: // 1 is valid
+   goto invalid;
+  }
+case '2':
+//next cur
+switch(cur)
+ {
+   case: '0':
+     goto valid;
+ default: // 2 is valid
+   goto invalid;
+ }
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+  goto valid;
+ default:
+   goto invalid;
+}
+
+
 Romford:
+
+switch(cur)
+ {
+case '1':
+//next cur
+  goto DistrictFull;
+case '2':
+//next cur
+switch(cur)
+ {
+   case: '0':
+     goto valid;
+ default: // 2 is valid
+     goto invalid;
+  }
+case '3':
+case '4':
+case '5':
+case '6':
+case '7':
+case '8':
+case '9':
+   goto valid;
+  default:
+    goto invalid;
+}
 
 //S
 Swansea:
