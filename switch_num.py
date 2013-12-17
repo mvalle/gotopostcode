@@ -6,7 +6,7 @@ for o in xrange(1, 10):
     print "//next cur"
     print "switch(cur)\n {"
     for i in xrange(0, 10):
-        print "   case: '%d':" % i
+        print "   case '%d':" % i
 
     print "   goto valid;"
     print "   default:"
