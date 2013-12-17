@@ -480,7 +480,7 @@ switch(cur)
    //next cur
     switch(cur)
       {
-      case: '0':
+      case '0':
 	goto valid;
       default:
 	goto invalid;
@@ -528,10 +528,10 @@ switch(cur) {
  case '1':
    //next cur
    switch(cur) {
-   case: '0':
-   case: '1':
-   case: '2':
-   case: '8':
+   case '0':
+   case '1':
+   case '2':
+   case '8':
      goto valid;
    default:
      goto invalid;
@@ -547,7 +547,7 @@ switch(cur) {
  case '9':
    //next cur
    switch(cur) {
-   case: '4':
+   case '4':
      goto valid;
    default:
      goto invalid;
@@ -577,9 +577,9 @@ switch(cur) {
    //next cur
    switch(cur)
      {
-     case: '7':
-     case: '8':
-     case: '9':
+     case '7':
+     case '8':
+     case '9':
        goto valid;
      default:
        goto invalid;
@@ -626,7 +626,7 @@ switch(cur)
  case '6':
  case '7':
    switch(cur) {
-   case: '8':
+   case '8':
      goto valid;
    default:
      goto invalid;
@@ -660,8 +660,8 @@ switch(cur) {
  case '9':
    //next cur
    switch(cur) {
-   case: '1':
-   case: '9': // Lloyds TSB
+   case '1':
+   case '9': // Lloyds TSB
      goto valid;
    default: goto invalid;
    }
@@ -677,12 +677,12 @@ switch(cur) {
  case '1':
    //next cur
    switch(cur) {
-   case: '0':
-   case: '1':
-   case: '3':
-   case: '4':
-   case: '5':
-   case: '6':
+   case '0':
+   case '1':
+   case '3':
+   case '4':
+   case '5':
+   case '6':
      goto valid;
    default:
      goto invalid;
@@ -693,14 +693,14 @@ switch(cur) {
    //next cur
    switch(cur)
      {
-     case: '0':
-     case: '1':
-     case: '2':
-     case: '4':
-     case: '5':
-     case: '6':
-     case: '7':
-     case: '9':
+     case '0':
+     case '1':
+     case '2':
+     case '4':
+     case '5':
+     case '6':
+     case '7':
+     case '9':
        goto valid;
      default:
        goto invalid;
@@ -709,10 +709,10 @@ switch(cur) {
    //next cur
    switch(cur)
      {
-     case: '0':
-     case: '1':
-     case: '8':
-     case: '9':
+     case '0':
+     case '1':
+     case '8':
+     case '9':
        goto valid;
      default:
        goto invalid;
@@ -782,15 +782,15 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '0':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
+      case '0':
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+      case '6':
+      case '7':
+      case '8':
+      case '9':
 	goto valid;
       default:
 	goto invalid;
@@ -799,7 +799,7 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '0':
+      case '0':
 	goto valid;
       default:
 	goto invalid;
@@ -812,7 +812,7 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '0':
+      case '0':
 	goto valid;
       default:
 	goto invalid;
@@ -962,9 +962,9 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '2':
-      case: '8':
-      case: '9':
+      case '2':
+      case '8':
+      case '9':
 	goto valid;
       default:
 	goto invalid;
@@ -997,15 +997,15 @@ Croydon:
 goto DistrictOnlyFull;
     switch(cur)
       {
-      case: '0':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
+      case '0':
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+      case '6':
+      case '7':
+      case '8':
+      case '9':
 	goto valid;
       default:
 	goto invalid;
@@ -1105,12 +1105,12 @@ switch(cur)
     goto District01;
   case '2':
   case '3':
-  case: '4':
-  case: '5':
-  case: '6':
-  case: '7':
-  case: '8':
-  case: '9':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
     goto valid;
   default:
     goto invalid;
@@ -1148,12 +1148,12 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '6':
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+      case '6':
 	goto valid;
       default:
 	goto invalid;
@@ -1202,7 +1202,7 @@ switch(cur)
   case '5':
   case '6':
   case '7':
-  case: '8':
+  case '8':
     goto valid;
   case '9':
     goto District8;
@@ -1218,16 +1218,16 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+      case '6':
+      case '7':
+      case '8':
+      case '9':
 	goto valid;
       default:
 	goto invalid;
@@ -1453,15 +1453,15 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
+      case '0':
+      case '1':
+      case '2':
+      case '4':
+      case '5':
+      case '6':
+      case '7':
+      case '8':
+      case '9':
 	goto valid;
       default:
 	goto invalid;
@@ -1520,10 +1520,10 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '8':
+      case '1':
+      case '2':
+      case '3':
+      case '8':
 	goto valid;
       default:
 	goto invalid;
@@ -1577,11 +1577,11 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '7':
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '7':
 	goto valid;
       default:
 	// 2 is valid
@@ -1678,10 +1678,10 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
+      case '0':
+      case '1':
+      case '2':
+      case '3':
 	goto valid;
       default:
 	// 3 is valid
@@ -1697,7 +1697,7 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '8':
+      case '8':
 	goto valid;
       default:
 	// 9 is valid
@@ -1720,10 +1720,10 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '6':
+      case '0':
+      case '1':
+      case '2':
+      case '6':
 	goto valid;
       default:
 	// 3 is valid
@@ -1738,7 +1738,7 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '3':
+      case '3':
 	goto valid;
       default:
 	// 6 is valid
@@ -1828,7 +1828,7 @@ switch(cur)
  case '3':
  case '4':
  case '5':
- case: '6':
+ case '6':
  case '7':
  case '8':
    goto valid;
@@ -1880,8 +1880,8 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '5':
-      case: '7':
+      case '5':
+      case '7':
 	goto valid;
       default:
 	// 6 is valid
@@ -2068,13 +2068,13 @@ switch(cur)
     //next cur 
     switch(cur)
       {        
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '8':
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+      case '8':
 	goto valid;
       default:     
 	// 3 is valid
@@ -2093,8 +2093,8 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '0':
-      case: '9':
+      case '0':
+      case '9':
 	goto valid;
       default:
 	// 9 is valid
@@ -2128,10 +2128,10 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '2':
-      case: '3':
-      case: '5':
-      case: '8':
+      case '2':
+      case '3':
+      case '5':
+      case '8':
 	goto valid;
       default:
 	// 8 is valid
@@ -2141,9 +2141,9 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '2':
-      case: '8':
-      case: '9':
+      case '2':
+      case '8':
+      case '9':
 	goto valid;
       default:
 	// 9 is valid
@@ -2205,14 +2205,14 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '5':
-      case: '6':
-      case: '8':
-      case: '9':
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '5':
+      case '6':
+      case '8':
+      case '9':
 	goto valid;
       default:
 	// 1 is not valid
@@ -2222,12 +2222,12 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '0':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
+      case '0':
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+      case '6':
 	goto valid;
       default:
 	// 2 is not valid
@@ -2254,12 +2254,12 @@ switch(cur)
     //next cur
     switch(cur) 
       {         
-      case: '0':
-      case: '1':    
-      case: '2':       
-      case: '3':
-      case: '4':              
-      case: '5':                                                                  
+      case '0':
+      case '1':    
+      case '2':       
+      case '3':
+      case '4':              
+      case '5':                                                                  
 	goto valid;
       default:
 	// 3 is valid
@@ -2276,7 +2276,7 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '9':
+      case '9':
 	goto valid;
       default:
 	// 9 is valid
@@ -2295,10 +2295,10 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '0':
-      case: '1':
-      case: 'W':
-      case: 'w':
+      case '0':
+      case '1':
+      case 'W':
+      case 'w':
 	goto valid;
       default:
 	goto invalid;
@@ -2307,7 +2307,7 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '6':
+      case '6':
 	goto valid;
       default:
 	//2 is valid
@@ -2333,20 +2333,20 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
-      case: 'C':
-      case: 'c':
-      case: 'P':
-      case: 'p':
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+      case '6':
+      case '7':
+      case '8':
+      case '9':
+      case 'C':
+      case 'c':
+      case 'P':
+      case 'p':
 	goto valid;
       default:
 	goto invalid;
@@ -2355,9 +2355,9 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '0':
-      case: '1':
-      case: '2':
+      case '0':
+      case '1':
+      case '2':
 	goto valid;
       default:                                                                     
 	// 
@@ -2389,13 +2389,13 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '0':
-      case: '1':
-      case: '2':
-      case: '3':
-      case: '4':
-      case: '5':
-      case: '6':
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+      case '6':
 	goto valid;
       default:
 	// 1 is valid
@@ -2413,7 +2413,7 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '5':
+      case '5':
 	goto valid;
       default:
 	// 9 is valdi
@@ -2437,12 +2437,12 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '0':
-      case: '5':
-      case: '6':
-      case: '7':
-      case: '8':
-      case: '9':
+      case '0':
+      case '5':
+      case '6':
+      case '7':
+      case '8':
+      case '9':
 	goto valid;
       default:     
 	// 2 is valid
@@ -2453,8 +2453,8 @@ switch(cur)
     //next cur
     switch(cur)            
       {                    
-      case: '3':           
-      case: '9':           
+      case '3':           
+      case '9':           
 	goto valid;        
       default:             
 	//3 is valid
@@ -2464,8 +2464,8 @@ switch(cur)
     //next cur
     switch(cur)
       {
-      case: '4':
-      case: '9':
+      case '4':
+      case '9':
 	goto valid;
       default:
 	// 4 is valid
@@ -2500,7 +2500,7 @@ case '7':
 case '8':
 switch(cur)
  {
-   case: '0':
+   case '0':
      goto valid;
  default: // 8 is valid
      goto invalid;
@@ -2518,14 +2518,14 @@ case '1':
 //next cur
 switch(cur)
  {
-   case: '0':
-   case: '1':
-   case: '2':
-   case: '3':
-   case: '4':
-   case: '5':
-   case: '6':
-   case: '9':
+   case '0':
+   case '1':
+   case '2':
+   case '3':
+   case '4':
+   case '5':
+   case '6':
+   case '9':
      goto valid;
    default:
      goto invalid;
@@ -2536,15 +2536,15 @@ case '3':
 //next cur
 switch(cur)
  {
-   case: '0':
-   case: '1':
-   case: '2':
-   case: '3':
-   case: '4':
-   case: '5':
-   case: '6':
-   case: '7':
-   case: '8':
+   case '0':
+   case '1':
+   case '2':
+   case '3':
+   case '4':
+   case '5':
+   case '6':
+   case '7':
+   case '8':
      goto valid;
    default:
      goto invalid;
@@ -2571,13 +2571,13 @@ case '2':
 //next cur
 switch(cur)
  {
- case: '0':
- case: '1':
- case: '2':
- case: '3':
- case: '4':
- case: '5':
- case: '6':
+ case '0':
+ case '1':
+ case '2':
+ case '3':
+ case '4':
+ case '5':
+ case '6':
    goto valid;
  default:
    goto invalid;
@@ -2588,12 +2588,12 @@ case '4':
 //next cur
 switch(cur)
  {
-   case: '0':
-   case: '1':
-   case: '2':
-   case: '3':
-   case: '4':
-   case: '9':
+   case '0':
+   case '1':
+   case '2':
+   case '3':
+   case '4':
+   case '9':
      goto valid;
  default:
    goto invalid;
@@ -2602,7 +2602,7 @@ case '5':
 //next cur
 switch(cur)
  {
- case: '0':
+ case '0':
    goto valid;
  default: // 5 is valid
    goto invalid;
@@ -2628,12 +2628,12 @@ case '3':
 //next cur
 switch(cur)
  {
-   case: '0':
-   case: '1':
-   case: '2':
-   case: '3':
-   case: '4':
-   case: '5':
+   case '0':
+   case '1':
+   case '2':
+   case '3':
+   case '4':
+   case '5':
      goto valid;
  default: // 3 is valid
    goto invalid;
@@ -2648,7 +2648,7 @@ case '9':
 //next cur
 switch(cur)
  {
-   case: '5':
+   case '5':
      goto valid;
  default: // 9 is valid
    goto invalid;
@@ -2667,9 +2667,9 @@ case '2':
 //next cur
 switch(cur)
  {
-   case: '0':
-   case: '1':
-   case: '2':
+   case '0':
+   case '1':
+   case '2':
      goto valid;
  default: //2 is valid
    goto invalid;
@@ -2680,8 +2680,8 @@ case '4':
 //next cur
 switch(cur)
  {
-   case: '0':
-   case: '1':
+   case '0':
+   case '1':
      goto valid;
  default: // 4 is valid
      goto invalid;
@@ -2706,7 +2706,7 @@ case '1':
 //next cur
 switch(cur)
  {
-   case: '1':
+   case '1':
      goto valid;
  default:
    goto invalid;
@@ -2715,8 +2715,8 @@ case '2':
 //next cur
 switch(cur)
  {
-   case: '5':
-   case: '6':
+   case '5':
+   case '6':
      goto valid;
  default: //2 is valid
    goto invalid;
@@ -2741,12 +2741,12 @@ case '1':
 //next cur
 switch(cur)
  {
- case: '0':
- case: '2':
- case: '4':
- case: '7':
- case: '8':
- case: '9':
+ case '0':
+ case '2':
+ case '4':
+ case '7':
+ case '8':
+ case '9':
    goto valid;
  default: // 1 is valid
    goto invalid;
@@ -2757,8 +2757,8 @@ case '3':
 //next cur
 switch(cur)
  {
-   case: '0':
-   case: '1':
+   case '0':
+   case '1':
      goto valid;
  default: // 3 is invalid
      goto invalid;
@@ -2767,10 +2767,10 @@ case '4':
 //next cur
 switch(cur)
  {
-   case: '0':
-   case: '1':
-   case: '2':
-   case: '5':
+   case '0':
+   case '1':
+   case '2':
+   case '5':
      goto valid; 
  default: // 4 is valid
      goto invalid;
@@ -2793,8 +2793,8 @@ case '1':
 //next cur
 switch(cur)
  {
- case: '1': // non-geographic
- case: '4':
+ case '1': // non-geographic
+ case '4':
      goto valid;
  default: // 1 is valid
    goto invalid;
@@ -2803,7 +2803,7 @@ case '2':
 //next cur
 switch(cur)
  {
-   case: '0':
+   case '0':
      goto valid;
  default: // 2 is valid
    goto invalid;
@@ -2832,7 +2832,7 @@ case '2':
 //next cur
 switch(cur)
  {
-   case: '0':
+   case '0':
      goto valid;
  default: // 2 is valid
      goto invalid;
@@ -2859,7 +2859,7 @@ case '2':
 //next cur
 switch(cur)
  {
- case: '0':
+ case '0':
    goto valid;
  default: // 2 is valid
    goto invalid;
@@ -2878,7 +2878,7 @@ case '8':
 //next cur
 switch(cur)
  {
-   case: '0':
+   case '0':
    goto valid;
  default:// 8 is valid
    goto invalid;
@@ -2887,7 +2887,7 @@ case '9':
 //next cur
 switch(cur)
  {
-   case: '9':
+   case '9':
    goto valid;
  default: // 9 is valid
    goto invalid;
@@ -2924,13 +2924,13 @@ switch(cur)
  case '1':
    goto DistrictFull;
  case '2':
- case: '3':
- case: '4':
- case: '5':
- case: '6':
- case: '7':
- case: '8':
- case: '9':
+ case '3':
+ case '4':
+ case '5':
+ case '6':
+ case '7':
+ case '8':
+ case '9':
    goto valid;
  default:
    goto invalid;
@@ -2948,8 +2948,8 @@ case '2':
 //next cur
 switch(cur)
  {
- case: '2':
- case: '3':
+ case '2':
+ case '3':
    goto valid;
  default: // 2 is valid
    goto invalid;
@@ -2957,7 +2957,7 @@ switch(cur)
  case '3':
  case '4':
  case '5':
- case: '6':
+ case '6':
  case '7':
  case '8':
  case '9':
@@ -2972,15 +2972,454 @@ goto DistrictFull;
 //95
 
 Sutton:
+switch(cur)
+  {
+  case '1':
+  case '2':
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  default:
+    goto invalid;
+  }
+
 Swindon:
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+      case '6':
+	goto valid;
+      default: // 1 is valid
+	goto invalid;
+      }
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case '5':
+      case '6':
+	goto valid;
+      default: // 2 is valid
+	goto invalid;
+      }
+  case '3':
+    //next cur
+    switch(cur)
+      {
+      case '8':
+	goto valid;
+      default: // 3 is valid
+	goto invalid;
+      }
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+    goto valid;
+  case '9':
+    //next cur
+    switch(cur)
+      {
+      case '9':
+	goto valid;
+      default: // 9 is valid
+	goto invalid;
+      }
+  default:
+    goto invalid;
+  }
+
 Southampton:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case '4':
+      case '5':
+      case '6':
+      case '7':
+      case '8':
+      case '9':
+	goto valid;
+      default: // 1 is invalid
+	goto invalid;
+      }
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+	goto valid;
+      default:// 2 is invalid
+	goto invalid;
+      }
+  case '3':
+    //next cur
+    switch(cur)
+      {
+      case '0':
+      case '1':
+      case '2':
+	goto valid;
+      default: // 3 is invalid
+	goto invalid;
+      }
+  case '4':
+    //next cur
+    switch(cur)
+      {
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '5':
+	goto valid;
+      default: // 4 is invalid
+	goto invalid;
+      }
+  case '5':
+    //next cur
+    switch(cur)
+      {
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+	goto valid;
+      default: // 5 is invalid
+	goto invalid;
+      }
+  default:
+    goto invalid;
+  }
+
 Salisbury:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case '0':
+      case '1':
+	goto valid;
+      default: // 1 is valid
+	goto invalid;
+      }
+  case '2':
+  case '3':
+      case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 Sunderland:
+goto FullDisrict;
+
 SouthendOnSea:
+
+switch(cur)
+  {
+  case '0':
+    goto valid;
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+      case '6':
+      case '7':
+	goto valid;
+      default: // 1 is valid
+	goto invalid;
+      }
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case '2':
+	goto valid;
+      default: // 2 is validNN
+	goto invalid;
+      }
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+    goto valid;
+  case '9':
+    //next cur
+    switch(cur)
+      {
+      case '9':
+	goto valid;
+      default: // 9 is valid
+	goto invalid;
+      }
+  default:
+    goto invalid;
+  }
+
+
 StokeOnTrent:
+
+switch(cur)
+  {
+  case '1':
+    goto FullDistrict;
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case '0':
+      case '1':
+	goto valid;
+      default: // 2 is valid
+	goto invalid;
+      }
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+	goto valid;
+  default:
+    goto invalid;
+  }
+
 SouthWesternAndBattersea:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case '0':
+	goto valid;
+      case '1':
+	goto SW;
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+      case '6':
+      case '7':
+      case '8':
+      case '9':
+	goto valid;
+      default:
+	goto invalid;
+      }
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case '0':
+	goto valid;
+      default: // 2 is valid
+	goto invalid;
+      }
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+	goto valid;
+  case '9':
+    //next cur
+    switch(cur)
+      {
+      case '5':
+	goto valid;
+      default: // 9 is valis
+	goto invalid;
+      }
+  default:
+    goto invalid;
+  }
+
 Shrewsbury:
+
+switch(cur)
+  {
+  case '1':
+    goto FullDistrict;
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+	goto valid;
+      default: // 2 is valid
+	goto invalid;
+      }
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+	goto valid;
+  default:
+    goto invalid;
+  }
+
 Sheffield:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+      case '7':
+      case '8':
+      case '9':
+	goto valid;
+      default: // 1 is valid
+	goto invalid;
+      }
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case '0':
+      case '1':
+      case '5':
+      case '6':
+	goto valid;
+      default: // 2 is valid
+	goto invalid;
+      }
+  case '3':
+    //next cur
+    switch(cur)
+      {
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '5':
+      case '6':
+	goto valid;
+      default: // 3 is valid
+	goto invalid;
+      }
+  case '4':
+    //next cur
+    switch(cur)
+      {
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+      case '9':
+	goto valid;
+      default: // 4 is valid
+	goto invalid;
+      }
+  case '6':
+    //next cur
+    switch(cur)
+      {
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+      case '6':
+	goto valid;
+      default: // 6 is valid
+	goto invalid;
+      }
+  case '7':
+    //next cur
+    switch(cur)
+      {
+      case '0':
+      case '1':
+      case '2':
+      case '3':
+      case '4':
+      case '5':
+	goto valid;
+      default: // 7 is valid
+	goto invalid;
+      }
+  case '8':
+    //next cur
+    switch(cur)
+      {
+      case '0':
+      case '1':
+	goto valid;
+      default: // 8 is valid
+	goto invalid;
+      }
+  case '9':
+    //next cur
+    switch(cur)
+      {
+      case '6':
+      case '7':
+      case '8':
+	goto valid;
+      default: // 9 is valid
+	goto invalid;
+      }
+  default:
+    goto invalid;
+  }
 
 //T
 Taunton:
@@ -3018,16 +3457,16 @@ DistrictFull:
 //next cur
 switch(cur)
   {
-  case: '0':
-  case: '1':
-  case: '2':
-  case: '3':
-  case: '4':
-  case: '5':
-  case: '6':
-  case: '7':
-  case: '8':
-  case: '9':
+  case '0':
+  case '1':
+  case '2':
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
     goto valid;
   default:
     goto invalid;
@@ -3036,15 +3475,15 @@ District08:
 //next cur
 switch(cur)
   {
-  case: '0':
-  case: '1':
-  case: '2':
-  case: '3':
-  case: '4':
-  case: '5':
-  case: '6':
-  case: '7':
-  case: '8':
+  case '0':
+  case '1':
+  case '2':
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
     goto valid;
   default:
     goto invalid;
@@ -3053,14 +3492,14 @@ District07:
 //next cur
 switch(cur)
   {
-  case: '0':
-  case: '1':
-  case: '2':
-  case: '3':
-  case: '4':
-  case: '5':
-  case: '6':
-  case: '7':
+  case '0':
+  case '1':
+  case '2':
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
     goto valid;
   default:
     goto invalid;
@@ -3069,13 +3508,13 @@ District06:
 //next cur
 switch(cur)
   {
-  case: '0':
-  case: '1':
-  case: '2':
-  case: '3':
-  case: '4':
-  case: '5':
-  case: '6':
+  case '0':
+  case '1':
+  case '2':
+  case '3':
+  case '4':
+  case '5':
+  case '6':
     goto valid;
   default:
     goto invalid;
@@ -3085,12 +3524,12 @@ District05:
 //next cur
 switch(cur)
   {
-  case: '0':
-  case: '1':
-  case: '2':
-  case: '3':
-  case: '4':
-  case: '5':
+  case '0':
+  case '1':
+  case '2':
+  case '3':
+  case '4':
+  case '5':
     goto valid;
   default:
     goto invalid;
@@ -3099,11 +3538,11 @@ District04:
 //next cur
 switch(cur)
   {
-  case: '0':
-  case: '1':
-  case: '2':
-  case: '3':
-  case: '4':
+  case '0':
+  case '1':
+  case '2':
+  case '3':
+  case '4':
     goto valid;
   default:
     goto invalid;
@@ -3113,9 +3552,9 @@ District02:
 //next cur
 switch(cur)
   {
-  case: '0':
-  case: '1':
-  case: '2':
+  case '0':
+  case '1':
+  case '2':
     goto valid;
   default:
     goto invalid;
@@ -3124,8 +3563,8 @@ District01:
 //next cur
 switch(cur)
   {
-  case: '0':
-  case: '1':
+  case '0':
+  case '1':
     goto valid;
   default:
     goto invalid;
@@ -3134,10 +3573,10 @@ District14:
 //next cur
 switch(cur)
   {
-  case: '1':
-  case: '2':
-  case: '3':
-  case: '4':
+  case '1':
+  case '2':
+  case '3':
+  case '4':
     goto valid;
   default:
     goto invalid;
@@ -3146,11 +3585,11 @@ District15:
 //next cur
 switch(cur)
   {
-  case: '1':
-  case: '2':
-  case: '3':
-  case: '4':
-  case: '5':
+  case '1':
+  case '2':
+  case '3':
+  case '4':
+  case '5':
     goto valid;
   default:
     goto invalid;
@@ -3159,11 +3598,11 @@ District16:
 //next cur
 switch(cur)
   {
-  case: '1':
-  case: '2':
-  case: '3':
-  case: '4':
-  case: '5':
+  case '1':
+  case '2':
+  case '3':
+  case '4':
+  case '5':
     goto valid;
   default:
     goto invalid;
@@ -3172,8 +3611,8 @@ DistrictOnly23:
 //next cur
 switch(cur)
   {
-  case: '2':
-  case: '3':
+  case '2':
+  case '3':
     goto valid;
   default:
     goto invalid;
@@ -3182,8 +3621,8 @@ District89:
 //next cur
 switch(cur)
   {
-  case: '8':
-  case: '9':
+  case '8':
+  case '9':
     goto valid;
   default:
     goto invalid;
@@ -3229,16 +3668,16 @@ DistrictFull:
 //next cur
 switch(cur)
   {
-  case: '0':
-  case: '1':
-  case: '2':
-  case: '3':
-  case: '4':
-  case: '5':
-  case: '6':
-  case: '7':
-  case: '8':
-  case: '9':
+  case '0':
+  case '1':
+  case '2':
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
     goto valid;
   default:
     goto invalid;
@@ -3249,14 +3688,14 @@ DistrictOnly08:
 switch(cur)
   {
   case '0':
-  case: '1':
-  case: '2':
-  case: '3':
-  case: '4':
-  case: '5':
-  case: '6':
-  case: '7':
-  case: '8':
+  case '1':
+  case '2':
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
     goto valid;
   default:
     goto invalid;
@@ -3265,14 +3704,14 @@ DistrictOnly18:
 //next cur
 switch(cur)
   {
-  case: '1':
-  case: '2':
-  case: '3':
-  case: '4':
-  case: '5':
-  case: '6':
-  case: '7':
-  case: '8':
+  case '1':
+  case '2':
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
     goto valid;
   default:
     goto invalid;
