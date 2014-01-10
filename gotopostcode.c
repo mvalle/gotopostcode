@@ -3423,16 +3423,212 @@ switch(cur)
 
 //T
 Taunton:
+switch(cur)
+  {
+  case '1':
+    //next cur
+    goto FullDistrict;
+  case '2':
+    //next cur
+    goto District04;
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+}
+
+
 Galashiels:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    goto District05;
+  case '2':
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+}
+
+
 Telford:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    goto District03;
+  case '2':
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 Tonbridge:
+
+switch(cur)
+ {
+ case '1':
+   //next cur
+   goto DistrictFull;
+ case '2':
+   //next cur
+  goto DistrictFull;
+ case '3':
+   //next cur
+   goto DistrictFull;
+ case '4':
+ case '5':
+ case '6':
+ case '7':
+ case '8':
+ case '9':
+   goto valid;
+ default:
+   goto invalid;
+  }
+
 Torquay:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    goto District04;
+  case '2':
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
 Truro:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    goto DistrictFull;
+  case '2':
+    //next cur
+    goto District07;
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
+
+
 Cleveland:
+
+switch(cur)
+ {
+ case '1':
+   //next cur
+   goto DistrictFull;
+ case '2':
+   //next cur
+   goto DistrictFull;
+ case '3':
+ case '4':
+ case '5':
+ case '6':
+ case '7':
+ case '8':
+ case '9':
+   goto valid;
+ default:
+   goto invalid;
+ }
+
 Twickenham:
+
+switch(cur)
+  {
+  case '1':
+    //next cur
+    goto DistrictFull;
+  case '2':
+    //next cur
+    switch(cur)
+      {
+      case '0':
+	goto valid;
+      default: // 2 is valid
+	goto invalid;
+  }
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+  case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
 
 //U
 Southall:
+switch(cur)
+  {
+  case '1':
+    //next cur
+    switch(cur)
+      {
+      case '0':
+      case '1':
+      case '8':
+	goto valid;
+      default: // 1 is valid
+	goto invalid;
+      }
+  case '2':
+  case '3':
+  case '4':
+  case '5':
+  case '6':
+   case '7':
+  case '8':
+  case '9':
+    goto valid;
+  default:
+    goto invalid;
+  }
 
 //W
 Warrington:
@@ -3447,6 +3643,36 @@ LondonWest:
 
 //Y
 York:
+switch(cur)
+  {
+  case '1':
+    //next cur
+    goto DistrictFull;
+  case '2':
+    //next cur
+    goto District16;
+  case '3':
+    //next cur
+    goto District02;
+  case '4':
+    //next cur
+    goto District13;
+  case '5':
+    //next cur
+    goto District1;
+  case '6':
+    //next cur
+    goto District02;
+  case '7':
+  case '8':
+    goto valid;
+  case '9':
+    //next cur
+    goto District01;
+  default:
+    goto invalid;
+  }
+
 
 //Z
 Lerwick:
