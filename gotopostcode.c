@@ -1,3 +1,6 @@
+
+int main() {
+
 char cur;
 // to upper
 if(cur > 90)
@@ -129,7 +132,7 @@ switch(cur)
   case 'W':
     goto Crewe;
   default:
-    goto invalid:
+    goto invalid;
   }
 D:
 //next cur
@@ -571,8 +574,6 @@ switch(cur) {
  case '7':
  case '8':
    goto valid;
- default:
-   goto invalid;
  case '9':
    //next cur
    switch(cur)
@@ -1609,7 +1610,7 @@ Hull:
 switch(cur)
   {
   case '1':
-    goto DistrictFull
+    goto DistrictFull;
   case '2':
     goto District0;
   case '3':
@@ -1642,7 +1643,7 @@ switch(cur)
   case '7':
   case '8':
   case '9':
-    goto valid:
+    goto valid;
   default:
     goto invalid;
   }
@@ -1893,7 +1894,7 @@ switch(cur)
     goto District7;
   case '9':
     goto District45;
-  default;
+  default:
     goto invalid;
   }
 
@@ -2432,7 +2433,7 @@ Oxford:
 switch(cur)
   {
   case '1':
-    goto District08
+    goto District08;
   case '2':
     //next cur
     switch(cur)
@@ -2488,9 +2489,9 @@ case '1':
 case '2':
   goto DistrictFull;
 case '3':
-  goto District08
+  goto District08;
 case '4':
-  goto District19
+  goto District19;
 case '5':
   goto valid;
 case '6':
@@ -2865,7 +2866,7 @@ switch(cur)
    goto invalid;
   }
 case '3':
-  goto District19
+  goto District19;
 case '4':
   goto District08;
 case '5':
@@ -2912,7 +2913,7 @@ switch(cur)
  case '7':
  case '8':
  case '9':
-   goto valid
+   goto valid;
  default:
    goto invalid;
 }
@@ -3945,4 +3946,9 @@ switch(cur)
 
 
 // Invald
-invalid:
+ invalid:
+ return 1;
+ valid:
+ return 0;
+ 
+}
