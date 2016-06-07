@@ -3280,7 +3280,7 @@ Shrewsbury:
 switch(cur)
   {
   case '1':
-    goto FullDistrict;
+    goto DistrictFull;
   case '2':
     //next cur
     switch(cur)
@@ -3428,7 +3428,7 @@ switch(cur)
   {
   case '1':
     //next cur
-    goto FullDistrict;
+    goto DistrictFull;
   case '2':
     //next cur
     goto District04;
@@ -3886,25 +3886,6 @@ District1:
 switch(cur)
   {
   case '1':
-    goto valid;
-  default:
-    goto invalid;
-  }
-
-DistrictFull:
-//next cur
-switch(cur)
-  {
-  case '0':
-  case '1':
-  case '2':
-  case '3':
-  case '4':
-  case '5':
-  case '6':
-  case '7':
-  case '8':
-  case '9':
     goto valid;
   default:
     goto invalid;
