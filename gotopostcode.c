@@ -1,12 +1,37 @@
+#include <stdio.h>
 
-int main() {
-
-char cur;
-// to upper
-if(cur > 90)
-  {
-    cur = cur - 20;
+int main(int argc, char *argv[]) {
+  if (argc <= 1) {return 1;}
+  
+  
+  //printf("%s\n", argv[1]);
+  char cur;
+  int c = 0;
+  // to upper
+  char postcode[10]; 
+  
+  for(int i,p = 0; argv[1][i] != '\0' || i > 10; i++) {
+    cur = argv[1][i];
+    if(cur >= 97 && cur <= 122)
+      {
+	postcode[p++] = cur - 32;
+      }
+    else if (cur >= 65 && cur <= 90)
+      {
+	postcode[p++] = cur;
+      }
+    else if (cur >= 48 && cur <= 57)
+      {
+	postcode[p++] = cur;
+      }
   }
+  
+  cur = postcode[c];
+  //  printf("%s\n", postcode);
+
+
+
+
 
 // First Character
 switch(cur)
@@ -58,7 +83,7 @@ switch(cur)
   case 'W':
     goto W;
     //  case 'X':
-    //    goto X;
+   //    goto X;
   case 'Y':
     goto Y;
   case 'Z':
@@ -68,7 +93,7 @@ switch(cur)
 }
 
 A:
-// next cur
+  cur = postcode[++c];
 if(cur == 'B')
   goto Aberdeen;
 if(cur = 'L')
@@ -76,7 +101,7 @@ if(cur = 'L')
 goto invalid;
 
 B:
-// next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case 'A':
@@ -108,7 +133,7 @@ switch(cur)
   }
 
 C:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case 'A':
@@ -135,7 +160,7 @@ switch(cur)
     goto invalid;
   }
 D:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case 'A':
@@ -161,7 +186,7 @@ switch(cur)
   }
 
 E:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case 'C':
@@ -179,7 +204,7 @@ switch(cur)
   }
 
 F:
-//next cur
+  cur = postcode[++c];
 if(cur == 'K')
   goto Falkirk;
 if(cur == 'Y')
@@ -187,7 +212,7 @@ if(cur == 'Y')
 goto invalid;
 
 G:
-//next cur
+  cur = postcode[++c];
 if(cur == 'L')
   goto Gloucester;
 if(cur == 'U')
@@ -201,7 +226,7 @@ if(cur == 'I')
 goto invalid;
 
 H:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case 'A':
@@ -225,7 +250,7 @@ switch(cur)
   }
 
 I:
-//next cur
+  cur = postcode[++c];
 if(cur == 'G')
   goto Ilford;
 if(cur == 'M')
@@ -237,7 +262,7 @@ if(cur == 'V')
 goto invalid;
 
 J:
-//next cur
+  cur = postcode[++c];
 if(cur == 'E')
   goto Jersey;
 goto invalid;
@@ -278,7 +303,7 @@ switch(cur)
 
 
 M:
-//next cur
+  cur = postcode[++c];
 if(cur == 'E')
   goto Rochester;
 if(cur == 'K')
@@ -290,7 +315,7 @@ if(cur > 47 && cur < 58)
 goto invalid;
 
 N:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case 'E':
@@ -312,7 +337,7 @@ switch(cur)
   }
 
 O:
-//next cur
+  cur = postcode[++c];
 if(cur == 'L')
   goto Oldham;
 if(cur == 'X')
@@ -320,7 +345,7 @@ if(cur == 'X')
 goto invalid;
 
 P:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case 'A':
@@ -340,7 +365,7 @@ switch(cur)
   }
 
 R:
-//next cur
+  cur = postcode[++c];
 if(cur == 'G')
   goto Reading;
 if(cur == 'H')
@@ -350,7 +375,7 @@ if(cur == 'M')
 goto invalid;
 
 S:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case 'A':
@@ -440,7 +465,7 @@ switch(cur)
     goto invalid;
   }
 Y:
-//next cur
+  cur = postcode[++c];
 if(cur == 'O')
   goto York;
 goto invalid;
@@ -454,7 +479,7 @@ goto invalid;
 
 //A
 Aberdeen:
-//next cur
+  cur = postcode[++c];
 switch(cur)
 {
  case '1':
@@ -468,7 +493,7 @@ switch(cur)
  case '5':
    goto District16;
  case '9':
-   //next cur
+     cur = postcode[++c];
    if(cur == '9') // Non-geographic for Aberdeen City
      goto valid;
    goto invalid;
@@ -476,11 +501,11 @@ switch(cur)
 
 
 StAlbans:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '1':
-   //next cur
+     cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -504,7 +529,7 @@ switch(cur)
 
 //B
 Bath:
-//next cur
+  cur = postcode[++c];
 switch(cur) {
  case '1':
    goto District06;
@@ -524,12 +549,12 @@ switch(cur) {
  }
 
 Blackburn:
-//next cur
+  cur = postcode[++c];
 switch(cur) {
  case '0':
    goto valid;
  case '1':
-   //next cur
+     cur = postcode[++c];
    switch(cur) {
    case '0':
    case '1':
@@ -548,7 +573,7 @@ switch(cur) {
  case '8':
    goto valid;
  case '9':
-   //next cur
+     cur = postcode[++c];
    switch(cur) {
    case '4':
      goto valid;
@@ -561,7 +586,7 @@ switch(cur) {
 
 
 Bradford:
-//next cur
+  cur = postcode[++c];
 switch(cur) {
  case '1':
    goto DistrictFull;
@@ -575,7 +600,7 @@ switch(cur) {
  case '8':
    goto valid;
  case '9':
-   //next cur
+     cur = postcode[++c];
    switch(cur)
      {
      case '7':
@@ -593,7 +618,7 @@ BritishForces:
 goto NotImplemented;
 
 Bournemouth:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '1':
@@ -613,7 +638,7 @@ switch(cur)
   }
 
 Bolton:
-//next cur
+  cur = postcode[++c];
 switch(cur)
 {
  case '0':
@@ -641,7 +666,7 @@ switch(cur)
 
 
 Brighton:
-//next cur
+  cur = postcode[++c];
 switch(cur) {
  case '1':
    goto District08;
@@ -659,7 +684,7 @@ switch(cur) {
  case '8':
    goto District8;
  case '9':
-   //next cur
+     cur = postcode[++c];
    switch(cur) {
    case '1':
    case '9': // Lloyds TSB
@@ -676,7 +701,7 @@ goto DistrictOnly18;
 Bristol: // And TV Licencing special PC:
 switch(cur) {
  case '1':
-   //next cur
+     cur = postcode[++c];
    switch(cur) {
    case '0':
    case '1':
@@ -691,7 +716,7 @@ switch(cur) {
  case '2':
    goto DistrictFull;
  case '3':
-   //next cur
+     cur = postcode[++c];
    switch(cur)
      {
      case '0':
@@ -707,7 +732,7 @@ switch(cur) {
        goto invalid;
      }
  case '4':
-   //next cur
+     cur = postcode[++c];
    switch(cur)
      {
      case '0':
@@ -780,7 +805,7 @@ switch(cur)
   case '3':
     goto District08;
   case '4':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -797,7 +822,7 @@ switch(cur)
 	goto invalid;
       }
   case '5':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -810,7 +835,7 @@ switch(cur)
   case '7':
     goto DistrictFull;
   case '8':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -873,7 +898,7 @@ switch(cur)
   {
     // no CF1, but CF10, CF11, CF14, CF15
   case '1':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -900,7 +925,7 @@ switch(cur)
     goto DistrictOnly13;
   case '9':
     // no CF9, but CF91 CF95, CF99
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '1':
@@ -960,7 +985,7 @@ switch(cur)
   case '8':
     goto valid;
   case '9':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '2':
@@ -976,7 +1001,7 @@ switch(cur)
 
 
 Colchester:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '1':
@@ -1035,7 +1060,7 @@ switch(cur)
   }
 
 Coventry:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '1':
@@ -1146,7 +1171,7 @@ DumfriesAndGalloway:
 switch(cur)
   {
   case '1':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -1216,7 +1241,7 @@ Doncaster:
 switch(cur)
   {
   case '1':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -1451,7 +1476,7 @@ Guilford:
 switch(cur)
   {
   case '1':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -1518,7 +1543,7 @@ switch(cur)
   case '4':
     goto District06;
   case '5':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '1':
@@ -1544,10 +1569,10 @@ switch(cur)
 Girobank: //GIR:
 // Non-Geographic Girobank post code
 // Only valid GIR postcode is GIR 0AA;
-//next cur
+  cur = postcode[++c];
 if(cur == '0')
   {
-    //next cur
+      cur = postcode[++c];
     if(cur == 'A')
       {
 	if(cur == 'A')
@@ -1569,13 +1594,13 @@ Harrogate:
 goto District15;
 
 HemelHempstead:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '1':
     goto DistrictFull;
   case '2':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -1630,7 +1655,7 @@ goto District17;
 
 //I
 Ilford:
-// next  cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '1':
@@ -1649,7 +1674,7 @@ switch(cur)
   }
 
 IsleOfMan:
-// next  cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '1':
@@ -1676,7 +1701,7 @@ switch(cur)
   case '2':
     goto DistrictFull;
   case '3':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -1695,7 +1720,7 @@ switch(cur)
   case '8':
     goto valid;
   case '9':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '8':
@@ -1710,7 +1735,7 @@ switch(cur)
 
 
 Inverness:
-// next curr
+  cur = postcode[++c];
 switch(cur)
   {
   case '1':
@@ -1718,7 +1743,7 @@ switch(cur)
   case '2':
     goto District08;
   case '3':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -1736,7 +1761,7 @@ switch(cur)
     goto District15;
     // 5 is valid
   case '6':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '3':
@@ -1781,7 +1806,7 @@ switch(cur)
   }
 
 Kingston:
-    //next cur
+      cur = postcode[++c];
 switch(cur)
   {
   case '1':
@@ -1801,7 +1826,7 @@ switch(cur)
   }
 
 Kirkwall:
-// next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '1':
@@ -1878,7 +1903,7 @@ switch(cur)
   case '5':
     goto District5;
   case '6':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '5':
@@ -2024,7 +2049,7 @@ switch(cur)
   case '3':
     goto valid;
   case '4':
-    //next cur
+      cur = postcode[++c];
     goto District06;
   case '5':
   case '6':
@@ -2066,7 +2091,7 @@ switch(cur)
   case '2':
     goto DistrictFull;
   case '3':
-    //next cur 
+      cur = postcode[++c]; 
     switch(cur)
       {        
       case '0':
@@ -2091,7 +2116,7 @@ switch(cur)
   case '8':
     goto valid;
   case '9':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -2126,7 +2151,7 @@ switch(cur)
   case '7':
     goto District01;
   case '8':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '2':
@@ -2139,7 +2164,7 @@ switch(cur)
 	goto invalid;
       }
   case '9':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '2':
@@ -2203,7 +2228,7 @@ Newport:
 switch(cur)
   {
   case '1':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -2220,7 +2245,7 @@ switch(cur)
 	goto invalid;
       }
   case '2':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -2252,7 +2277,7 @@ switch(cur)
   case '2':
     goto DistrictFull;
   case '3':                                                                       
-    //next cur
+      cur = postcode[++c];
     switch(cur) 
       {         
       case '0':
@@ -2274,7 +2299,7 @@ switch(cur)
   case '8':
     goto valid;
   case '9':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '9':
@@ -2293,7 +2318,7 @@ LondonNorthWest:
 switch(cur)
   {
   case '1':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -2305,7 +2330,7 @@ switch(cur)
 	goto invalid;
       }
   case '2':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '6':
@@ -2331,7 +2356,7 @@ LondonNorth:
 switch(cur)
   {
   case '1':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -2353,7 +2378,7 @@ switch(cur)
 	goto invalid;
       }
   case '2':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -2387,7 +2412,7 @@ Oldham:
 switch(cur)
   {
   case '1':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -2411,7 +2436,7 @@ switch(cur)
   case '8':
     goto valid;
   case '9':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '5':
@@ -2435,7 +2460,7 @@ switch(cur)
   case '1':
     goto District08;
   case '2':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -2451,7 +2476,7 @@ switch(cur)
       }                                                                         
 
   case '3':  
-    //next cur
+      cur = postcode[++c];
     switch(cur)            
       {                    
       case '3':           
@@ -2462,7 +2487,7 @@ switch(cur)
 	goto invalid;      
       }                    
   case '4':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '4':
@@ -2516,7 +2541,7 @@ Peterborough:
 switch(cur)
  {
 case '1':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
    case '0':
@@ -2534,7 +2559,7 @@ switch(cur)
 case '2':
   goto DistrictFull;
 case '3':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
    case '0':
@@ -2569,7 +2594,7 @@ switch(cur)
 case '1':
   goto DistrictFull;
 case '2':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
  case '0':
@@ -2586,7 +2611,7 @@ switch(cur)
 case '3':
   goto DistrictFull;
 case '4':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
    case '0':
@@ -2600,7 +2625,7 @@ switch(cur)
    goto invalid;
   }
 case '5':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
  case '0':
@@ -2626,7 +2651,7 @@ case '1':
 case '2':
   goto DistrictFull;
 case '3':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
    case '0':
@@ -2646,7 +2671,7 @@ case '7':
 case '8':
   goto valid;
 case '9':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
    case '5':
@@ -2665,7 +2690,7 @@ switch(cur)
 case '1':
   goto DistrictFull;
 case '2':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
    case '0':
@@ -2678,7 +2703,7 @@ switch(cur)
 case '3':
   goto DistrictFull;
 case '4':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
    case '0':
@@ -2704,7 +2729,7 @@ switch(cur)
  case '0':
    goto valid;
 case '1':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
    case '1':
@@ -2713,7 +2738,7 @@ switch(cur)
    goto invalid;
   }
 case '2':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
    case '5':
@@ -2739,7 +2764,7 @@ Reading:
 switch(cur)
  {
 case '1':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
  case '0':
@@ -2755,7 +2780,7 @@ switch(cur)
 case '2':
   goto DistrictFull;
 case '3':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
    case '0':
@@ -2765,7 +2790,7 @@ switch(cur)
      goto invalid;
   }
 case '4':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
    case '0':
@@ -2791,7 +2816,7 @@ Redhill:
 switch(cur)
  {
 case '1':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
  case '1': // non-geographic
@@ -2801,7 +2826,7 @@ switch(cur)
    goto invalid;
   }
 case '2':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
    case '0':
@@ -2827,10 +2852,10 @@ Romford:
 switch(cur)
  {
 case '1':
-//next cur
+  cur = postcode[++c];
   goto DistrictFull;
 case '2':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
    case '0':
@@ -2857,7 +2882,7 @@ switch(cur)
 case '1':
   goto DistrictFull;
 case '2':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
  case '0':
@@ -2876,7 +2901,7 @@ case '6':
 case '7':
   goto District03;
 case '8':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
    case '0':
@@ -2885,7 +2910,7 @@ switch(cur)
    goto invalid;
   }
 case '9':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
    case '9':
@@ -2943,10 +2968,10 @@ Stockport:
 switch(cur)
  {
 case '1':
-//next cur
+  cur = postcode[++c];
   goto District07;
 case '2':
-//next cur
+  cur = postcode[++c];
 switch(cur)
  {
  case '2':
@@ -2990,7 +3015,7 @@ Swindon:
 switch(cur)
   {
   case '1':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -3005,7 +3030,7 @@ switch(cur)
 	goto invalid;
       }
   case '2':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '5':
@@ -3015,7 +3040,7 @@ switch(cur)
 	goto invalid;
       }
   case '3':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '8':
@@ -3030,7 +3055,7 @@ switch(cur)
   case '8':
     goto valid;
   case '9':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '9':
@@ -3047,7 +3072,7 @@ Southampton:
 switch(cur)
   {
   case '1':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '4':
@@ -3061,7 +3086,7 @@ switch(cur)
 	goto invalid;
       }
   case '2':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -3074,7 +3099,7 @@ switch(cur)
 	goto invalid;
       }
   case '3':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -3085,7 +3110,7 @@ switch(cur)
 	goto invalid;
       }
   case '4':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -3098,7 +3123,7 @@ switch(cur)
 	goto invalid;
       }
   case '5':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -3118,7 +3143,7 @@ Salisbury:
 switch(cur)
   {
   case '1':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -3150,7 +3175,7 @@ switch(cur)
   case '0':
     goto valid;
   case '1':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '1':
@@ -3165,7 +3190,7 @@ switch(cur)
 	goto invalid;
       }
   case '2':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '2':
@@ -3181,7 +3206,7 @@ switch(cur)
   case '8':
     goto valid;
   case '9':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '9':
@@ -3201,7 +3226,7 @@ switch(cur)
   case '1':
     goto DistrictFull;
   case '2':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -3227,7 +3252,7 @@ SouthWesternAndBattersea:
 switch(cur)
   {
   case '1':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -3247,7 +3272,7 @@ switch(cur)
 	goto invalid;
       }
   case '2':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -3263,7 +3288,7 @@ switch(cur)
   case '8':
 	goto valid;
   case '9':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '5':
@@ -3282,7 +3307,7 @@ switch(cur)
   case '1':
     goto DistrictFull;
   case '2':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -3312,7 +3337,7 @@ Sheffield:
 switch(cur)
   {
   case '1':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -3328,7 +3353,7 @@ switch(cur)
 	goto invalid;
       }
   case '2':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -3340,7 +3365,7 @@ switch(cur)
 	goto invalid;
       }
   case '3':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -3354,7 +3379,7 @@ switch(cur)
 	goto invalid;
       }
   case '4':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -3369,7 +3394,7 @@ switch(cur)
 	goto invalid;
       }
   case '6':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -3384,7 +3409,7 @@ switch(cur)
 	goto invalid;
       }
   case '7':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -3398,7 +3423,7 @@ switch(cur)
 	goto invalid;
       }
   case '8':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -3408,7 +3433,7 @@ switch(cur)
 	goto invalid;
       }
   case '9':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '6':
@@ -3427,10 +3452,10 @@ Taunton:
 switch(cur)
   {
   case '1':
-    //next cur
+      cur = postcode[++c];
     goto DistrictFull;
   case '2':
-    //next cur
+      cur = postcode[++c];
     goto District04;
   case '3':
   case '4':
@@ -3450,7 +3475,7 @@ Galashiels:
 switch(cur)
   {
   case '1':
-    //next cur
+      cur = postcode[++c];
     goto District05;
   case '2':
   case '3':
@@ -3471,7 +3496,7 @@ Telford:
 switch(cur)
   {
   case '1':
-    //next cur
+      cur = postcode[++c];
     goto District03;
   case '2':
   case '3':
@@ -3491,13 +3516,13 @@ Tonbridge:
 switch(cur)
  {
  case '1':
-   //next cur
+     cur = postcode[++c];
    goto DistrictFull;
  case '2':
-   //next cur
+     cur = postcode[++c];
   goto DistrictFull;
  case '3':
-   //next cur
+     cur = postcode[++c];
    goto DistrictFull;
  case '4':
  case '5':
@@ -3515,7 +3540,7 @@ Torquay:
 switch(cur)
   {
   case '1':
-    //next cur
+      cur = postcode[++c];
     goto District04;
   case '2':
   case '3':
@@ -3535,10 +3560,10 @@ Truro:
 switch(cur)
   {
   case '1':
-    //next cur
+      cur = postcode[++c];
     goto DistrictFull;
   case '2':
-    //next cur
+      cur = postcode[++c];
     goto District07;
   case '3':
   case '4':
@@ -3558,10 +3583,10 @@ Cleveland:
 switch(cur)
  {
  case '1':
-   //next cur
+     cur = postcode[++c];
    goto DistrictFull;
  case '2':
-   //next cur
+     cur = postcode[++c];
    goto DistrictFull;
  case '3':
  case '4':
@@ -3580,10 +3605,10 @@ Twickenham:
 switch(cur)
   {
   case '1':
-    //next cur
+      cur = postcode[++c];
     goto DistrictFull;
   case '2':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -3608,7 +3633,7 @@ Southall:
 switch(cur)
   {
   case '1':
-    //next cur
+      cur = postcode[++c];
     switch(cur)
       {
       case '0':
@@ -3647,28 +3672,28 @@ York:
 switch(cur)
   {
   case '1':
-    //next cur
+      cur = postcode[++c];
     goto DistrictFull;
   case '2':
-    //next cur
+      cur = postcode[++c];
     goto District16;
   case '3':
-    //next cur
+      cur = postcode[++c];
     goto District02;
   case '4':
-    //next cur
+      cur = postcode[++c];
     goto District13;
   case '5':
-    //next cur
+      cur = postcode[++c];
     goto District1;
   case '6':
-    //next cur
+      cur = postcode[++c];
     goto District02;
   case '7':
   case '8':
     goto valid;
   case '9':
-    //next cur
+      cur = postcode[++c];
     goto District01;
   default:
     goto invalid;
@@ -3681,7 +3706,7 @@ goto District13;
 
 
 DistrictFull:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '0':
@@ -3699,7 +3724,7 @@ switch(cur)
     goto invalid;
   }
 District08:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '0':
@@ -3716,7 +3741,7 @@ switch(cur)
     goto invalid;
   }
 District07:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '0':
@@ -3732,7 +3757,7 @@ switch(cur)
     goto invalid;
   }
 District06:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '0':
@@ -3748,7 +3773,7 @@ switch(cur)
   }
 
 District05:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '0':
@@ -3762,7 +3787,7 @@ switch(cur)
     goto invalid;
   }
 District04:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '0':
@@ -3775,7 +3800,7 @@ switch(cur)
     goto invalid;
   }
  District03:
-// next cur
+  cur = postcode[++c];
  switch(cur)
    {
    case '0':
@@ -3787,7 +3812,7 @@ switch(cur)
      goto invalid;
    }
 District02:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '0':
@@ -3798,7 +3823,7 @@ switch(cur)
     goto invalid;
   }
 District01:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '0':
@@ -3855,7 +3880,7 @@ switch(cur)
      goto invalid;
    }
  District16:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '1':
@@ -3869,7 +3894,7 @@ switch(cur)
     goto invalid;
   }
 District15:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '1':
@@ -3882,7 +3907,7 @@ switch(cur)
     goto invalid;
   }
 District14:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '1':
@@ -3894,7 +3919,7 @@ switch(cur)
     goto invalid;
   }
  District13:
-//next cur
+  cur = postcode[++c];
 switch(cur)
    {
    case '1':
@@ -3914,7 +3939,7 @@ switch(cur)
      goto invalid;
    }
 District29:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '2':
@@ -3931,7 +3956,7 @@ switch(cur)
   }
 
  District25:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '2':
@@ -3943,7 +3968,7 @@ switch(cur)
     goto invalid;
   }
 District24:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '2':
@@ -3955,7 +3980,7 @@ switch(cur)
   }
 
 District47:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '4':
@@ -3967,7 +3992,7 @@ switch(cur)
     goto invalid;
   }
  District45:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '4':
@@ -3977,7 +4002,7 @@ switch(cur)
     goto invalid;
   }
 District59:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '5':
@@ -3990,7 +4015,7 @@ switch(cur)
     goto invalid;
   }
  District56:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '5':
@@ -4000,7 +4025,7 @@ switch(cur)
     goto invalid;
   }
  District67:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '6':
@@ -4010,7 +4035,7 @@ switch(cur)
     goto invalid;
   }
 District79:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '7':
@@ -4022,7 +4047,7 @@ switch(cur)
   }
 
 District89:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '8':
@@ -4032,7 +4057,7 @@ switch(cur)
     goto invalid;
   }
 District99:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '9':
@@ -4041,7 +4066,7 @@ switch(cur)
     goto invalid;
   }
 District9:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '9':
@@ -4050,7 +4075,7 @@ switch(cur)
     goto invalid;
   }
 District8:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '8':
@@ -4060,7 +4085,7 @@ switch(cur)
   }
 
  District7:
-// next cur
+  cur = postcode[++c];
  switch(cur)
    {
    case '7':
@@ -4070,7 +4095,7 @@ switch(cur)
    }
 
 District5:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '5':
@@ -4079,7 +4104,7 @@ switch(cur)
     goto invalid;
   }
  District4:
-// next cur
+  cur = postcode[++c];
  switch(cur)
    {
    case '4':
@@ -4088,7 +4113,7 @@ switch(cur)
      goto invalid;
    }
 District1:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '1':
@@ -4097,7 +4122,7 @@ switch(cur)
     goto invalid;
   }
  District0:
-// next cur
+  cur = postcode[++c];
  switch(cur) {
  case '0':
    goto valid;
@@ -4106,7 +4131,7 @@ switch(cur)
  }
 
 DistrictOnlyFull:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '0':
@@ -4125,7 +4150,7 @@ switch(cur)
   }
 
 DistrictOnly08:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '0':
@@ -4142,7 +4167,7 @@ switch(cur)
     goto invalid;
   }
  DistrictOnly19:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '1':
@@ -4159,7 +4184,7 @@ switch(cur)
     goto invalid;
   }
 DistrictOnly18:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '1':
@@ -4175,7 +4200,7 @@ switch(cur)
     goto invalid;
   }
  DistrictOnly14:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '1':
@@ -4187,7 +4212,7 @@ switch(cur)
     goto invalid;
   }
 DistrictOnly13:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '1':
@@ -4198,7 +4223,7 @@ switch(cur)
     goto invalid;
   }
 DistrictOnly12:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '1':
@@ -4209,7 +4234,7 @@ switch(cur)
   }
 
 DistrictOnly23:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '2':
@@ -4219,7 +4244,7 @@ switch(cur)
     goto invalid;
   }
 DistrictOnly9:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '8':
@@ -4228,7 +4253,7 @@ switch(cur)
     goto invalid;
   }
 DistrictOnly8:
-//next cur
+  cur = postcode[++c];
 switch(cur)
   {
   case '8':
@@ -4237,11 +4262,31 @@ switch(cur)
     goto invalid;
   }
  
+// printf("Whaaat?\n");
+
 // Invald
  valid:
+ 
+ cur = postcode[++c];
+ printf("%d %c\n", cur, cur);
+ if (cur < 48) {goto error;}
+ if (cur > 57) {goto error;}
+ 
+ cur = postcode[++c];
+ if (cur < 65) {goto error;}
+ if (cur > 90) {goto error;}
+ 
+ cur = postcode[++c];
+ if (cur < 65) {goto error;}
+ if (cur > 90) {goto error;}
+ 
+
+ printf("WTF\n");
  return 0;
  invalid:
+
  return 1;
+
  NotImplemented:
  return 2;
  
@@ -4252,7 +4297,12 @@ switch(cur)
  EC3:
  EC2:
  EC1:
+
  return 3;
 
+
+ error:
+ printf("Error\n");
+ return 4;
 
 }
