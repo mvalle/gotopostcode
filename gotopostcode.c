@@ -3,8 +3,6 @@
 int main(int argc, char *argv[]) {
   if (argc <= 1) {return 1;}
   
-  
-  //printf("%s\n", argv[1]);
   char cur;
   int c = 0;
   // to upper
@@ -28,9 +26,6 @@ int main(int argc, char *argv[]) {
   
   cur = postcode[c];
   //  printf("%s\n", postcode);
-  
-  
-  
   
   
   // First Character
@@ -4256,13 +4251,10 @@ int main(int argc, char *argv[]) {
       goto invalid;
     }
  
-  // printf("Whaaat?\n");
-
   // Invald
  valid:
  
   cur = postcode[++c];
-  printf("%d %c\n", cur, cur);
   if (cur < 48) {goto error;}
   if (cur > 57) {goto error;}
  
@@ -4275,7 +4267,6 @@ int main(int argc, char *argv[]) {
   if (cur > 90) {goto error;}
  
 
-  printf("WTF\n");
   return 0;
  invalid:
 
@@ -4296,7 +4287,6 @@ int main(int argc, char *argv[]) {
 
 
  error:
-  printf("Error\n");
   return 4;
 
 }
