@@ -6,9 +6,12 @@ int main(int argc, char *argv[]) {
   char cur;
   int c = 0;
   // to upper
-  char postcode[10]; 
+  char postcode[10];
+
+  // postcode length
+  int p = 0;
   
-  for(int i,p = 0; argv[1][i] != '\0' || i > 10; i++) {
+  for(int i = 0; argv[1][i] != '\0' || i > 10; i++) {
     cur = argv[1][i];
     if(cur >= 97 && cur <= 122)
       {
@@ -460,6 +463,7 @@ int main(int argc, char *argv[]) {
   goto invalid;
   
  Z:
+  cur = postcode[++c];
   if(cur == 'E')
     goto Lerwick;
   goto invalid;
@@ -484,7 +488,7 @@ int main(int argc, char *argv[]) {
     case '9':
       cur = postcode[++c];
       if(cur == '9') // Non-geographic for Aberdeen City
-	goto valid;
+	goto inward;
       goto invalid;
     }
   
@@ -498,7 +502,7 @@ int main(int argc, char *argv[]) {
       switch(cur)
 	{
 	case '0':
-	  goto valid;
+	  goto inward;
 	default:
 	  goto invalid;
 	}
@@ -510,7 +514,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -531,7 +535,7 @@ int main(int argc, char *argv[]) {
   case '7':
   case '8':
   case '9':
-    goto valid;
+    goto inward;
 
   default:
     goto invalid;
@@ -541,15 +545,18 @@ int main(int argc, char *argv[]) {
   cur = postcode[++c];
   switch(cur) {
   case '0':
-    goto valid;
+    goto inward;
   case '1':
+    if (p == 6) {
+      goto inward;
+    }
     cur = postcode[++c];
     switch(cur) {
     case '0':
     case '1':
     case '2':
     case '8':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -560,12 +567,12 @@ int main(int argc, char *argv[]) {
   case '6':
   case '7':
   case '8':
-    goto valid;
+    goto inward;
   case '9':
     cur = postcode[++c];
     switch(cur) {
     case '4':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -587,7 +594,7 @@ int main(int argc, char *argv[]) {
   case '6':
   case '7':
   case '8':
-    goto valid;
+    goto inward;
   case '9':
     cur = postcode[++c];
     switch(cur)
@@ -595,7 +602,7 @@ int main(int argc, char *argv[]) {
       case '7':
       case '8':
       case '9':
-	goto valid;
+	goto inward;
       default:
 	goto invalid;
       }
@@ -621,7 +628,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -631,7 +638,7 @@ int main(int argc, char *argv[]) {
   switch(cur)
     {
     case '0':
-      goto valid;
+      goto inward;
     case '1':
       goto District1;
     case '2':
@@ -642,13 +649,13 @@ int main(int argc, char *argv[]) {
     case '7':
       switch(cur) {
       case '8':
-	goto valid;
+	goto inward;
       default:
 	goto invalid;
       }
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -662,14 +669,14 @@ int main(int argc, char *argv[]) {
   case '2':
     goto District07;
   case '3':
-    goto valid;
+    goto inward;
   case '4':
     goto District14;
   case '5':
     goto District02;
   case '6':
   case '7':
-    goto valid;
+    goto inward;
   case '8':
     goto District8;
   case '9':
@@ -677,7 +684,7 @@ int main(int argc, char *argv[]) {
     switch(cur) {
     case '1':
     case '9': // Lloyds TSB
-      goto valid;
+      goto inward;
     default: goto invalid;
     }
   default: goto invalid;
@@ -698,7 +705,7 @@ int main(int argc, char *argv[]) {
     case '4':
     case '5':
     case '6':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -716,7 +723,7 @@ int main(int argc, char *argv[]) {
       case '6':
       case '7':
       case '9':
-	goto valid;
+	goto inward;
       default:
 	goto invalid;
       }
@@ -728,7 +735,7 @@ int main(int argc, char *argv[]) {
       case '1':
       case '8':
       case '9':
-	goto valid;
+	goto inward;
       default:
 	goto invalid;
       }
@@ -736,7 +743,7 @@ int main(int argc, char *argv[]) {
   case '6':
   case '7':
   case '8':
-    goto valid;
+    goto inward;
   case '9':
     goto District89;
   default:
@@ -758,7 +765,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -806,7 +813,7 @@ int main(int argc, char *argv[]) {
 	case '7':
 	case '8':
 	case '9':
-	  goto valid;
+	  goto inward;
 	default:
 	  goto invalid;
 	}
@@ -815,7 +822,7 @@ int main(int argc, char *argv[]) {
       switch(cur)
 	{
 	case '0':
-	  goto valid;
+	  goto inward;
 	default:
 	  goto invalid;
 	}
@@ -828,7 +835,7 @@ int main(int argc, char *argv[]) {
       switch(cur)
 	{
 	case '0':
-	  goto valid;
+	  goto inward;
 	default:
 	  goto invalid;
 	}
@@ -853,7 +860,7 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     case '9':
       goto District5;
     default:
@@ -894,7 +901,7 @@ int main(int argc, char *argv[]) {
 	case '1':
 	case '4':
 	case '5':
-	  goto valid;
+	  goto inward;
 	default:
 	  goto invalid;
 	}
@@ -905,7 +912,7 @@ int main(int argc, char *argv[]) {
     case '4':
       goto DistrictOnly08;
     case '5':
-      goto valid;
+      goto inward;
     case '6':
       goto DistrictOnly14;
     case '7':
@@ -920,7 +927,7 @@ int main(int argc, char *argv[]) {
 	case '1':
 	case '5':
 	case '9':
-	  goto valid;
+	  goto inward;
 	default:
 	  goto invalid;
 	}
@@ -934,7 +941,7 @@ int main(int argc, char *argv[]) {
   switch(cur)
     {
     case '1':
-      goto valid;
+      goto inward;
     case '2':
       goto District59;
     case '3':
@@ -942,7 +949,7 @@ int main(int argc, char *argv[]) {
     case '4':
       goto District19;
     case '5':
-      goto valid;
+      goto inward;
     case '6':
       goto District06;
     case '7':
@@ -968,11 +975,11 @@ int main(int argc, char *argv[]) {
     case '4':
     case '5':
     case '6':
-      goto valid;
+      goto inward;
     case '7':
       goto District7;
     case '8':
-      goto valid;
+      goto inward;
     case '9':
       cur = postcode[++c];
       switch(cur)
@@ -980,7 +987,7 @@ int main(int argc, char *argv[]) {
 	case '2':
 	case '8':
 	case '9':
-	  goto valid;
+	  goto inward;
 	default:
 	  goto invalid;
 	}
@@ -1003,7 +1010,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1021,7 +1028,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1036,14 +1043,14 @@ int main(int argc, char *argv[]) {
       goto District01;
     case '3':
     case '4':
-      goto valid;
+      goto inward;
     case '5':
       goto District0;
     case '6':
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1065,7 +1072,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1083,7 +1090,7 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     case '9':
       goto District8;
     default:
@@ -1106,7 +1113,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1126,7 +1133,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1140,7 +1147,7 @@ int main(int argc, char *argv[]) {
     case '2':
       goto DistrictOnly14;
     case '3':
-      goto valid;
+      goto inward;
     case '4':
       goto District5;
     case '5':
@@ -1169,7 +1176,7 @@ int main(int argc, char *argv[]) {
 	case '3':
 	case '4':
 	case '6':
-	  goto valid;
+	  goto inward;
 	default:
 	  goto invalid;
 	}
@@ -1181,7 +1188,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1198,7 +1205,7 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     case '9':
       goto District79;
     default:
@@ -1218,7 +1225,7 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     case '9':
       goto District8;
     default:
@@ -1243,7 +1250,7 @@ int main(int argc, char *argv[]) {
 	case '7':
 	case '8':
 	case '9':
-	  goto valid;
+	  goto inward;
 	default:
 	  goto invalid;
 	}
@@ -1259,7 +1266,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1278,7 +1285,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1297,7 +1304,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1337,7 +1344,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1354,12 +1361,12 @@ int main(int argc, char *argv[]) {
     case '4':
     case '5':
     case '6':
-      goto valid;
+      goto inward;
     case '7':
       goto District7;
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1381,7 +1388,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1399,11 +1406,11 @@ int main(int argc, char *argv[]) {
     case '4':
     case '5':
     case '6':
-      goto valid;
+      goto inward;
     case '7':
       goto District7;
     case '8':
-      goto valid;
+      goto inward;
     case '9':
       goto District8;
     default:
@@ -1427,7 +1434,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1447,14 +1454,14 @@ int main(int argc, char *argv[]) {
       goto District0;
     case '3':
     case '4':
-      goto valid;
+      goto inward;
     case '5':
       goto District06;
     case '6':
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1477,7 +1484,7 @@ int main(int argc, char *argv[]) {
 	case '7':
 	case '8':
 	case '9':
-	  goto valid;
+	  goto inward;
 	default:
 	  goto invalid;
 	}
@@ -1492,7 +1499,7 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     case '9':
       goto District5;
     default:
@@ -1513,7 +1520,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1539,7 +1546,7 @@ int main(int argc, char *argv[]) {
 	case '2':
 	case '3':
 	case '8':
-	  goto valid;
+	  goto inward;
 	default:
 	  goto invalid;
 	}
@@ -1566,7 +1573,7 @@ int main(int argc, char *argv[]) {
 	{
 	  if(cur == 'A')
 	    {
-	      goto valid;
+	      goto inward;
 	    }
 	}
     }
@@ -1597,7 +1604,7 @@ int main(int argc, char *argv[]) {
 	case '2':
 	case '3':
 	case '7':
-	  goto valid;
+	  goto inward;
 	default:
 	  // 2 is valid
 	  goto invalid;
@@ -1609,7 +1616,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1634,7 +1641,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1657,7 +1664,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1673,7 +1680,7 @@ int main(int argc, char *argv[]) {
     case '5':
     case '6':
     case '7':
-      goto valid;
+      goto inward;
     case '8':
       goto District67;
     case '9':
@@ -1697,7 +1704,7 @@ int main(int argc, char *argv[]) {
 	case '1':
 	case '2':
 	case '3':
-	  goto valid;
+	  goto inward;
 	default:
 	  // 3 is valid
 	  goto invalid;
@@ -1707,13 +1714,13 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     case '9':
       cur = postcode[++c];
       switch(cur)
 	{
 	case '8':
-	  goto valid;
+	  goto inward;
 	default:
 	  // 9 is valid
 	  goto invalid;
@@ -1739,7 +1746,7 @@ int main(int argc, char *argv[]) {
 	case '1':
 	case '2':
 	case '6':
-	  goto valid;
+	  goto inward;
 	default:
 	  // 3 is valid
 	  goto invalid;
@@ -1754,7 +1761,7 @@ int main(int argc, char *argv[]) {
       switch(cur)
 	{
 	case '3':
-	  goto valid;
+	  goto inward;
 	default:
 	  // 6 is valid
 	  goto invalid;
@@ -1762,7 +1769,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1789,7 +1796,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1809,7 +1816,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1828,7 +1835,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1846,7 +1853,7 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     case '9':
       goto District9;
     default:
@@ -1869,7 +1876,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1886,7 +1893,7 @@ int main(int argc, char *argv[]) {
     case '2':
       goto District1;
     case '3':
-      goto valid;
+      goto inward;
     case '4':
       goto District1;
     case '5':
@@ -1897,13 +1904,13 @@ int main(int argc, char *argv[]) {
 	{
 	case '5':
 	case '7':
-	  goto valid;
+	  goto inward;
 	default:
 	  // 6 is valid
 	  goto invalid;
 	}
     case '7':
-      goto valid;
+      goto inward;
     case '8':
       goto District7;
     case '9':
@@ -1950,7 +1957,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -1969,7 +1976,7 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     case '9':
       goto District8;
     default:
@@ -1992,7 +1999,7 @@ int main(int argc, char *argv[]) {
     case '4':
       goto District0;
     case '5':
-      goto valid;
+      goto inward;
     case '6':
       goto District79;
     case '7':
@@ -2000,7 +2007,7 @@ int main(int argc, char *argv[]) {
     case '8':
       goto District0;
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -2023,7 +2030,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -2036,18 +2043,18 @@ int main(int argc, char *argv[]) {
       goto DistrictFull;
     case '2':
     case '3':
-      goto valid;
+      goto inward;
     case '4':
       cur = postcode[++c];
       goto District06;
     case '5':
     case '6':
-      goto valid;
+      goto inward;
     case '7':
       goto District7;
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -2066,7 +2073,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -2090,7 +2097,7 @@ int main(int argc, char *argv[]) {
 	case '4':
 	case '5':
 	case '8':
-	  goto valid;
+	  goto inward;
 	default:     
 	  // 3 is valid
 	  goto invalid;
@@ -2103,14 +2110,14 @@ int main(int argc, char *argv[]) {
       goto District0;
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     case '9':
       cur = postcode[++c];
       switch(cur)
 	{
 	case '0':
 	case '9':
-	  goto valid;
+	  goto inward;
 	default:
 	  // 9 is valid
 	  goto invalid;
@@ -2134,7 +2141,7 @@ int main(int argc, char *argv[]) {
     case '4':
       goto DistrictFull;
     case '5':
-      goto valid;
+      goto inward;
     case '6':
       goto DistrictFull;
     case '7':
@@ -2147,7 +2154,7 @@ int main(int argc, char *argv[]) {
 	case '3':
 	case '5':
 	case '8':
-	  goto valid;
+	  goto inward;
 	default:
 	  // 8 is valid
 	  goto invalid;
@@ -2159,7 +2166,7 @@ int main(int argc, char *argv[]) {
 	case '2':
 	case '8':
 	case '9':
-	  goto valid;
+	  goto inward;
 	default:
 	  // 9 is valid
 	  goto invalid;
@@ -2181,7 +2188,7 @@ int main(int argc, char *argv[]) {
     case '4':
     case '5':
     case '6':
-      goto valid;
+      goto inward;
     case '7':
       goto District0;
     case '8':
@@ -2206,7 +2213,7 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     case '9':
       goto District9;
     default:
@@ -2228,7 +2235,7 @@ int main(int argc, char *argv[]) {
 	case '6':
 	case '8':
 	case '9':
-	  goto valid;
+	  goto inward;
 	default:
 	  // 1 is not valid
 	  goto invalid;
@@ -2243,7 +2250,7 @@ int main(int argc, char *argv[]) {
 	case '4':
 	case '5':
 	case '6':
-	  goto valid;
+	  goto inward;
 	default:
 	  // 2 is not valid
 	  goto invalid;
@@ -2252,7 +2259,7 @@ int main(int argc, char *argv[]) {
       goto District4;
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -2275,7 +2282,7 @@ int main(int argc, char *argv[]) {
 	case '3':
 	case '4':              
 	case '5':                                                                  
-	  goto valid;
+	  goto inward;
 	default:
 	  // 3 is valid
 	  goto invalid; 
@@ -2286,13 +2293,13 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     case '9':
       cur = postcode[++c];
       switch(cur)
 	{
 	case '9':
-	  goto valid;
+	  goto inward;
 	default:
 	  // 9 is valid
 	  goto invalid;
@@ -2314,7 +2321,7 @@ int main(int argc, char *argv[]) {
 	case '1':
 	case 'W':
 	case 'w':
-	  goto valid;
+	  goto inward;
 	default:
 	  goto invalid;
 	}
@@ -2323,7 +2330,7 @@ int main(int argc, char *argv[]) {
       switch(cur)
 	{
 	case '6':
-	  goto valid;
+	  goto inward;
 	default:
 	  //2 is valid
 	  goto invalid;
@@ -2335,7 +2342,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -2362,7 +2369,7 @@ int main(int argc, char *argv[]) {
 	case 'c':
 	case 'P':
 	case 'p':
-	  goto valid;
+	  goto inward;
 	default:
 	  goto invalid;
 	}
@@ -2373,7 +2380,7 @@ int main(int argc, char *argv[]) {
 	case '0':
 	case '1':
 	case '2':
-	  goto valid;
+	  goto inward;
 	default:                                                                     
 	  // 
 	  goto invalid;                                                                
@@ -2385,7 +2392,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -2411,7 +2418,7 @@ int main(int argc, char *argv[]) {
 	case '4':
 	case '5':
 	case '6':
-	  goto valid;
+	  goto inward;
 	default:
 	  // 1 is valid
 	  goto invalid;
@@ -2423,13 +2430,13 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     case '9':
       cur = postcode[++c];
       switch(cur)
 	{
 	case '5':
-	  goto valid;
+	  goto inward;
 	default:
 	  // 9 is valdi
 	  goto invalid;
@@ -2458,7 +2465,7 @@ int main(int argc, char *argv[]) {
 	case '7':
 	case '8':
 	case '9':
-	  goto valid;
+	  goto inward;
 	default:     
 	  // 2 is valid
 	  goto invalid;
@@ -2470,7 +2477,7 @@ int main(int argc, char *argv[]) {
 	{                    
 	case '3':           
 	case '9':           
-	  goto valid;        
+	  goto inward;        
 	default:             
 	  //3 is valid
 	  goto invalid;      
@@ -2481,7 +2488,7 @@ int main(int argc, char *argv[]) {
 	{
 	case '4':
 	case '9':
-	  goto valid;
+	  goto inward;
 	default:
 	  // 4 is valid
 	  goto invalid;
@@ -2489,7 +2496,7 @@ int main(int argc, char *argv[]) {
     case '5':
     case '7':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -2507,7 +2514,7 @@ int main(int argc, char *argv[]) {
     case '4':
       goto District19;
     case '5':
-      goto valid;
+      goto inward;
     case '6':
       goto DistrictFull;
     case '7':
@@ -2516,12 +2523,12 @@ int main(int argc, char *argv[]) {
       switch(cur)
 	{
 	case '0':
-	  goto valid;
+	  goto inward;
 	default: // 8 is valid
 	  goto invalid;
 	}
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -2541,7 +2548,7 @@ int main(int argc, char *argv[]) {
 	case '5':
 	case '6':
 	case '9':
-	  goto valid;
+	  goto inward;
 	default:
 	  goto invalid;
 	}
@@ -2560,7 +2567,7 @@ int main(int argc, char *argv[]) {
 	case '6':
 	case '7':
 	case '8':
-	  goto valid;
+	  goto inward;
 	default:
 	  goto invalid;
 	}
@@ -2569,7 +2576,7 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     case '9':
       goto District9;
     default:
@@ -2593,7 +2600,7 @@ int main(int argc, char *argv[]) {
 	case '4':
 	case '5':
 	case '6':
-	  goto valid;
+	  goto inward;
 	default:
 	  goto invalid;
 	}
@@ -2609,7 +2616,7 @@ int main(int argc, char *argv[]) {
 	case '3':
 	case '4':
 	case '9':
-	  goto valid;
+	  goto inward;
 	default:
 	  goto invalid;
 	}
@@ -2618,7 +2625,7 @@ int main(int argc, char *argv[]) {
       switch(cur)
 	{
 	case '0':
-	  goto valid;
+	  goto inward;
 	default: // 5 is valid
 	  goto invalid;
 	}
@@ -2626,7 +2633,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -2649,7 +2656,7 @@ int main(int argc, char *argv[]) {
 	case '3':
 	case '4':
 	case '5':
-	  goto valid;
+	  goto inward;
 	default: // 3 is valid
 	  goto invalid;
 	}
@@ -2658,13 +2665,13 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     case '9':
       cur = postcode[++c];
       switch(cur)
 	{
 	case '5':
-	  goto valid;
+	  goto inward;
 	default: // 9 is valid
 	  goto invalid;
 	}
@@ -2685,7 +2692,7 @@ int main(int argc, char *argv[]) {
 	case '0':
 	case '1':
 	case '2':
-	  goto valid;
+	  goto inward;
 	default: //2 is valid
 	  goto invalid;
 	}
@@ -2697,7 +2704,7 @@ int main(int argc, char *argv[]) {
 	{
 	case '0':
 	case '1':
-	  goto valid;
+	  goto inward;
 	default: // 4 is valid
 	  goto invalid;
 	}
@@ -2706,7 +2713,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -2716,13 +2723,13 @@ int main(int argc, char *argv[]) {
   switch(cur)
     {
     case '0':
-      goto valid;
+      goto inward;
     case '1':
       cur = postcode[++c];
       switch(cur)
 	{
 	case '1':
-	  goto valid;
+	  goto inward;
 	default:
 	  goto invalid;
 	}
@@ -2732,7 +2739,7 @@ int main(int argc, char *argv[]) {
 	{
 	case '5':
 	case '6':
-	  goto valid;
+	  goto inward;
 	default: //2 is valid
 	  goto invalid;
 	}
@@ -2743,7 +2750,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -2762,7 +2769,7 @@ int main(int argc, char *argv[]) {
 	case '7':
 	case '8':
 	case '9':
-	  goto valid;
+	  goto inward;
 	default: // 1 is valid
 	  goto invalid;
 	}
@@ -2774,7 +2781,7 @@ int main(int argc, char *argv[]) {
 	{
 	case '0':
 	case '1':
-	  goto valid;
+	  goto inward;
 	default: // 3 is invalid
 	  goto invalid;
 	}
@@ -2786,7 +2793,7 @@ int main(int argc, char *argv[]) {
 	case '1':
 	case '2':
 	case '5':
-	  goto valid; 
+	  goto inward; 
 	default: // 4 is valid
 	  goto invalid;
 	}
@@ -2795,7 +2802,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -2810,7 +2817,7 @@ int main(int argc, char *argv[]) {
 	{
 	case '1': // non-geographic
 	case '4':
-	  goto valid;
+	  goto inward;
 	default: // 1 is valid
 	  goto invalid;
 	}
@@ -2819,7 +2826,7 @@ int main(int argc, char *argv[]) {
       switch(cur)
 	{
 	case '0':
-	  goto valid;
+	  goto inward;
 	default: // 2 is valid
 	  goto invalid;
 	}
@@ -2830,7 +2837,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -2848,7 +2855,7 @@ int main(int argc, char *argv[]) {
       switch(cur)
 	{
 	case '0':
-	  goto valid;
+	  goto inward;
 	default: // 2 is valid
 	  goto invalid;
 	}
@@ -2859,7 +2866,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -2875,7 +2882,7 @@ int main(int argc, char *argv[]) {
       switch(cur)
 	{
 	case '0':
-	  goto valid;
+	  goto inward;
 	default: // 2 is valid
 	  goto invalid;
 	}
@@ -2884,7 +2891,7 @@ int main(int argc, char *argv[]) {
     case '4':
       goto District08;
     case '5':
-      goto valid;
+      goto inward;
     case '6':
       goto District19;
     case '7':
@@ -2894,7 +2901,7 @@ int main(int argc, char *argv[]) {
       switch(cur)
 	{
 	case '0':
-	  goto valid;
+	  goto inward;
 	default:// 8 is valid
 	  goto invalid;
 	}
@@ -2903,7 +2910,7 @@ int main(int argc, char *argv[]) {
       switch(cur)
 	{
 	case '9':
-	  goto valid;
+	  goto inward;
 	default: // 9 is valid
 	  goto invalid;
 	}
@@ -2927,7 +2934,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -2946,7 +2953,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -2965,7 +2972,7 @@ int main(int argc, char *argv[]) {
 	{
 	case '2':
 	case '3':
-	  goto valid;
+	  goto inward;
 	default: // 2 is valid
 	  goto invalid;
 	}
@@ -2976,7 +2983,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3014,7 +3021,7 @@ int main(int argc, char *argv[]) {
 	case '4':
 	case '5':
 	case '6':
-	  goto valid;
+	  goto inward;
 	default: // 1 is valid
 	  goto invalid;
 	}
@@ -3024,7 +3031,7 @@ int main(int argc, char *argv[]) {
 	{
 	case '5':
 	case '6':
-	  goto valid;
+	  goto inward;
 	default: // 2 is valid
 	  goto invalid;
 	}
@@ -3033,7 +3040,7 @@ int main(int argc, char *argv[]) {
       switch(cur)
 	{
 	case '8':
-	  goto valid;
+	  goto inward;
 	default: // 3 is valid
 	  goto invalid;
 	}
@@ -3042,13 +3049,13 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     case '9':
       cur = postcode[++c];
       switch(cur)
 	{
 	case '9':
-	  goto valid;
+	  goto inward;
 	default: // 9 is valid
 	  goto invalid;
 	}
@@ -3070,7 +3077,7 @@ int main(int argc, char *argv[]) {
 	case '7':
 	case '8':
 	case '9':
-	  goto valid;
+	  goto inward;
 	default: // 1 is invalid
 	  goto invalid;
 	}
@@ -3083,7 +3090,7 @@ int main(int argc, char *argv[]) {
 	case '2':
 	case '3':
 	case '4':
-	  goto valid;
+	  goto inward;
 	default:// 2 is invalid
 	  goto invalid;
 	}
@@ -3094,7 +3101,7 @@ int main(int argc, char *argv[]) {
 	case '0':
 	case '1':
 	case '2':
-	  goto valid;
+	  goto inward;
 	default: // 3 is invalid
 	  goto invalid;
 	}
@@ -3107,7 +3114,7 @@ int main(int argc, char *argv[]) {
 	case '2':
 	case '3':
 	case '5':
-	  goto valid;
+	  goto inward;
 	default: // 4 is invalid
 	  goto invalid;
 	}
@@ -3119,7 +3126,7 @@ int main(int argc, char *argv[]) {
 	case '1':
 	case '2':
 	case '3':
-	  goto valid;
+	  goto inward;
 	default: // 5 is invalid
 	  goto invalid;
 	}
@@ -3137,7 +3144,7 @@ int main(int argc, char *argv[]) {
 	{
 	case '0':
 	case '1':
-	  goto valid;
+	  goto inward;
 	default: // 1 is valid
 	  goto invalid;
 	}
@@ -3149,7 +3156,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3162,7 +3169,7 @@ int main(int argc, char *argv[]) {
   switch(cur)
     {
     case '0':
-      goto valid;
+      goto inward;
     case '1':
       cur = postcode[++c];
       switch(cur)
@@ -3174,7 +3181,7 @@ int main(int argc, char *argv[]) {
 	case '5':
 	case '6':
 	case '7':
-	  goto valid;
+	  goto inward;
 	default: // 1 is valid
 	  goto invalid;
 	}
@@ -3183,7 +3190,7 @@ int main(int argc, char *argv[]) {
       switch(cur)
 	{
 	case '2':
-	  goto valid;
+	  goto inward;
 	default: // 2 is validNN
 	  goto invalid;
 	}
@@ -3193,13 +3200,13 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     case '9':
       cur = postcode[++c];
       switch(cur)
 	{
 	case '9':
-	  goto valid;
+	  goto inward;
 	default: // 9 is valid
 	  goto invalid;
 	}
@@ -3220,7 +3227,7 @@ int main(int argc, char *argv[]) {
 	{
 	case '0':
 	case '1':
-	  goto valid;
+	  goto inward;
 	default: // 2 is valid
 	  goto invalid;
 	}
@@ -3231,7 +3238,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3245,7 +3252,7 @@ int main(int argc, char *argv[]) {
       switch(cur)
 	{
 	case '0':
-	  goto valid;
+	  goto inward;
 	case '1':
 	  goto SW;
 	case '2':
@@ -3256,7 +3263,7 @@ int main(int argc, char *argv[]) {
 	case '7':
 	case '8':
 	case '9':
-	  goto valid;
+	  goto inward;
 	default:
 	  goto invalid;
 	}
@@ -3265,7 +3272,7 @@ int main(int argc, char *argv[]) {
       switch(cur)
 	{
 	case '0':
-	  goto valid;
+	  goto inward;
 	default: // 2 is valid
 	  goto invalid;
 	}
@@ -3275,13 +3282,13 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     case '9':
       cur = postcode[++c];
       switch(cur)
 	{
 	case '5':
-	  goto valid;
+	  goto inward;
 	default: // 9 is valis
 	  goto invalid;
 	}
@@ -3305,7 +3312,7 @@ int main(int argc, char *argv[]) {
 	case '3':
 	case '4':
 	case '5':
-	  goto valid;
+	  goto inward;
 	default: // 2 is valid
 	  goto invalid;
 	}
@@ -3316,7 +3323,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3337,7 +3344,7 @@ int main(int argc, char *argv[]) {
 	case '7':
 	case '8':
 	case '9':
-	  goto valid;
+	  goto inward;
 	default: // 1 is valid
 	  goto invalid;
 	}
@@ -3349,7 +3356,7 @@ int main(int argc, char *argv[]) {
 	case '1':
 	case '5':
 	case '6':
-	  goto valid;
+	  goto inward;
 	default: // 2 is valid
 	  goto invalid;
 	}
@@ -3363,7 +3370,7 @@ int main(int argc, char *argv[]) {
 	case '3':
 	case '5':
 	case '6':
-	  goto valid;
+	  goto inward;
 	default: // 3 is valid
 	  goto invalid;
 	}
@@ -3378,7 +3385,7 @@ int main(int argc, char *argv[]) {
 	case '4':
 	case '5':
 	case '9':
-	  goto valid;
+	  goto inward;
 	default: // 4 is valid
 	  goto invalid;
 	}
@@ -3393,7 +3400,7 @@ int main(int argc, char *argv[]) {
 	case '4':
 	case '5':
 	case '6':
-	  goto valid;
+	  goto inward;
 	default: // 6 is valid
 	  goto invalid;
 	}
@@ -3407,7 +3414,7 @@ int main(int argc, char *argv[]) {
 	case '3':
 	case '4':
 	case '5':
-	  goto valid;
+	  goto inward;
 	default: // 7 is valid
 	  goto invalid;
 	}
@@ -3417,7 +3424,7 @@ int main(int argc, char *argv[]) {
 	{
 	case '0':
 	case '1':
-	  goto valid;
+	  goto inward;
 	default: // 8 is valid
 	  goto invalid;
 	}
@@ -3428,7 +3435,7 @@ int main(int argc, char *argv[]) {
 	case '6':
 	case '7':
 	case '8':
-	  goto valid;
+	  goto inward;
 	default: // 9 is valid
 	  goto invalid;
 	}
@@ -3453,7 +3460,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3474,7 +3481,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3495,7 +3502,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3519,7 +3526,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3539,7 +3546,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3561,7 +3568,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3584,7 +3591,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3601,7 +3608,7 @@ int main(int argc, char *argv[]) {
       switch(cur)
 	{
 	case '0':
-	  goto valid;
+	  goto inward;
 	default: // 2 is valid
 	  goto invalid;
 	}
@@ -3612,7 +3619,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3628,7 +3635,7 @@ int main(int argc, char *argv[]) {
 	case '0':
 	case '1':
 	case '8':
-	  goto valid;
+	  goto inward;
 	default: // 1 is valid
 	  goto invalid;
 	}
@@ -3640,7 +3647,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3658,31 +3665,25 @@ int main(int argc, char *argv[]) {
 
   //Y
  York:
+  cur = postcode[++c];
   switch(cur)
     {
     case '1':
-      cur = postcode[++c];
       goto DistrictFull;
     case '2':
-      cur = postcode[++c];
       goto District16;
     case '3':
-      cur = postcode[++c];
       goto District02;
     case '4':
-      cur = postcode[++c];
       goto District13;
     case '5':
-      cur = postcode[++c];
       goto District1;
     case '6':
-      cur = postcode[++c];
       goto District02;
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     case '9':
-      cur = postcode[++c];
       goto District01;
     default:
       goto invalid;
@@ -3708,7 +3709,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3725,7 +3726,7 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3741,7 +3742,7 @@ int main(int argc, char *argv[]) {
     case '5':
     case '6':
     case '7':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3756,7 +3757,7 @@ int main(int argc, char *argv[]) {
     case '4':
     case '5':
     case '6':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3771,7 +3772,7 @@ int main(int argc, char *argv[]) {
     case '3':
     case '4':
     case '5':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3784,7 +3785,7 @@ int main(int argc, char *argv[]) {
     case '2':
     case '3':
     case '4':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3796,7 +3797,7 @@ int main(int argc, char *argv[]) {
     case '1':
     case '2':
     case '3':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3807,7 +3808,7 @@ int main(int argc, char *argv[]) {
     case '0':
     case '1':
     case '2':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3817,7 +3818,7 @@ int main(int argc, char *argv[]) {
     {
     case '0':
     case '1':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3833,7 +3834,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3848,7 +3849,7 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3864,7 +3865,7 @@ int main(int argc, char *argv[]) {
     case '5':
     case '6':
     case '7':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3878,7 +3879,7 @@ int main(int argc, char *argv[]) {
     case '4':
     case '5':
     case '6':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3891,7 +3892,7 @@ int main(int argc, char *argv[]) {
     case '3':
     case '4':
     case '5':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3903,7 +3904,7 @@ int main(int argc, char *argv[]) {
     case '2':
     case '3':
     case '4':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3914,7 +3915,7 @@ int main(int argc, char *argv[]) {
     case '1':
     case '2':
     case '3':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3923,7 +3924,7 @@ int main(int argc, char *argv[]) {
     {
     case '1':
     case '2':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3939,7 +3940,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3952,7 +3953,7 @@ int main(int argc, char *argv[]) {
     case '3':
     case '4':
     case '5':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3963,7 +3964,7 @@ int main(int argc, char *argv[]) {
     case '2':
     case '3':
     case '4':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3976,7 +3977,7 @@ int main(int argc, char *argv[]) {
     case '5':
     case '6':
     case '7':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3986,7 +3987,7 @@ int main(int argc, char *argv[]) {
     {
     case '4':
     case '5':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -3999,7 +4000,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4009,7 +4010,7 @@ int main(int argc, char *argv[]) {
     {
     case '5':
     case '6':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4019,7 +4020,7 @@ int main(int argc, char *argv[]) {
     {
     case '6':
     case '7':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4030,7 +4031,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4041,7 +4042,7 @@ int main(int argc, char *argv[]) {
     {
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4050,7 +4051,7 @@ int main(int argc, char *argv[]) {
   switch(cur)
     {
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4059,7 +4060,7 @@ int main(int argc, char *argv[]) {
   switch(cur)
     {
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4068,7 +4069,7 @@ int main(int argc, char *argv[]) {
   switch(cur)
     {
     case '8':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4078,7 +4079,7 @@ int main(int argc, char *argv[]) {
   switch(cur)
     {
     case '7':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4088,7 +4089,7 @@ int main(int argc, char *argv[]) {
   switch(cur)
     {
     case '5':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4097,7 +4098,7 @@ int main(int argc, char *argv[]) {
   switch(cur)
     {
     case '4':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4106,7 +4107,7 @@ int main(int argc, char *argv[]) {
   switch(cur)
     {
     case '1':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4114,7 +4115,7 @@ int main(int argc, char *argv[]) {
   cur = postcode[++c];
   switch(cur) {
   case '0':
-    goto valid;
+    goto inward;
   default:
     goto invalid;
   }
@@ -4133,7 +4134,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4151,7 +4152,7 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4168,7 +4169,7 @@ int main(int argc, char *argv[]) {
     case '7':
     case '8':
     case '9':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4184,7 +4185,7 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4196,7 +4197,7 @@ int main(int argc, char *argv[]) {
     case '2':
     case '3':
     case '4':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4207,7 +4208,7 @@ int main(int argc, char *argv[]) {
     case '1':
     case '2':
     case '3':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4217,7 +4218,7 @@ int main(int argc, char *argv[]) {
     {
     case '1':
     case '2':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4228,7 +4229,7 @@ int main(int argc, char *argv[]) {
     {
     case '2':
     case '3':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4237,7 +4238,7 @@ int main(int argc, char *argv[]) {
   switch(cur)
     {
     case '8':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
@@ -4246,13 +4247,13 @@ int main(int argc, char *argv[]) {
   switch(cur)
     {
     case '8':
-      goto valid;
+      goto inward;
     default:
       goto invalid;
     }
  
-  // Invald
- valid:
+  // check the 'inward' part, ie. last 3 digits
+ inward:
  
   cur = postcode[++c];
   if (cur < 48) {goto error;}
@@ -4266,7 +4267,9 @@ int main(int argc, char *argv[]) {
   if (cur < 65) {goto error;}
   if (cur > 90) {goto error;}
  
+  goto valid;
 
+ valid:
   return 0;
  invalid:
 
