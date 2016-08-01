@@ -571,8 +571,11 @@ int main(int argc, char *argv[]) {
     case '6':
     case '7':
     case '8':
-    case '9':
       goto inward;
+    case '9':
+      if(p == 6)
+	goto inward;
+      goto District4;
     default:
       goto invalid;
     }
@@ -691,6 +694,8 @@ int main(int argc, char *argv[]) {
 	goto inward;
       goto District8;
     case '9':
+      if (p == 6)
+	goto inward;
       cur = postcode[++c];
       switch(cur)
 	{
@@ -803,6 +808,7 @@ int main(int argc, char *argv[]) {
     case '7':
       if (p == 6)
 	goto inward;
+      cur = postcode[++c];
       switch(cur)
 	{
 	case '0':
@@ -955,7 +961,7 @@ int main(int argc, char *argv[]) {
     case '2':
       if (p == 6)
 	goto inward;
-      goto District29;
+      goto District08;
     case '3':
     case '4':
     case '5':
@@ -966,7 +972,15 @@ int main(int argc, char *argv[]) {
     case '9':
       if (p == 6)
 	goto inward;
-      goto District5;
+      cur = postcode[++c];
+      switch(cur)
+	{
+	case '5':
+	case '9':
+	  goto inward;
+	default:
+	  goto inward;
+	}
     default:
       goto invalid;
     }
@@ -1012,7 +1026,7 @@ int main(int argc, char *argv[]) {
 	  goto invalid;
 	}
     case '2':
-      goto District23;
+      goto District34;
     case '3':
       if (p == 6)
 	goto inward;
@@ -1075,7 +1089,7 @@ int main(int argc, char *argv[]) {
 	goto inward;
       goto District8;
     case '9':
-      goto District8;
+      goto District9;
     default:
       goto invalid;
     }
@@ -1152,13 +1166,19 @@ int main(int argc, char *argv[]) {
     case '0':
     case '2':
     case '3':
+      goto inward;
     case '4':
+      if(p == 6)
+	goto inward;
+      goto District4;
     case '5':
     case '6':
     case '7':
     case '8':
     case '9':
-      goto inward;
+      if (p == 6)
+	goto inward;
+      goto District0;
     default:
       goto invalid;
     }
@@ -1238,6 +1258,8 @@ int main(int argc, char *argv[]) {
     case '8':
       goto inward;
     case '9':
+      if (p == 6)
+	goto inward;
       goto District8;
     default:
       goto invalid;
@@ -1393,6 +1415,8 @@ int main(int argc, char *argv[]) {
     case '8':
       goto inward;
     case '9':
+      if (p == 6)
+	goto inward;
       goto District8;
     default:
       goto invalid;
@@ -1459,7 +1483,7 @@ int main(int argc, char *argv[]) {
     case '1':
       if (p == 6)
 	goto inward;
-      goto District14;
+      goto District04;
     case '2':
     case '3':
     case '4':
@@ -1517,8 +1541,8 @@ int main(int argc, char *argv[]) {
       cur = postcode[++c];
       switch(cur)
 	{
+	case '1':
 	case '5':
-	  goto inward;
 	case '9':
 	  goto inward;
 	default:
@@ -1788,21 +1812,12 @@ int main(int argc, char *argv[]) {
       goto invalid;
     }
 
- Girobank: //GIR:
-  // Non-Geographic Girobank post code
-  // Only valid GIR postcode is GIR 0AA;
-  cur = postcode[++c];
-  if(cur == '0')
-    {
-      cur = postcode[++c];
-      if(cur == 'A')
-	{
-	  if(cur == 'A')
-	    {
-	      goto inward;
-	    }
-	}
-    }
+ Girobank:
+  if(postcode[++c] == 'R')
+  if(postcode[++c] == '0')    
+  if(postcode[++c] == 'A')
+  if(postcode[++c] == 'A')
+    goto inward;
   goto invalid;
 
   //H
@@ -1918,8 +1933,12 @@ int main(int argc, char *argv[]) {
     case '7':
       goto inward;
     case '8':
+      if(p == 6)
+	goto inward;
       goto District67;
     case '9':
+      if(p == 6)
+	goto inward;
       goto District99;
     default:
       goto invalid;
@@ -2412,7 +2431,7 @@ int main(int argc, char *argv[]) {
     case '6':
       if (p == 5)
 	goto inward;
-      goto District0;
+      goto District01;
     case '7':
     case '8':
       goto inward;
@@ -3309,7 +3328,7 @@ Sutton:
     case '2':
       if(p == 6)
 	goto inward;
-      goto District04;
+      goto District05;
     case '3':
       if (p == 6)
 	goto inward;
@@ -3868,6 +3887,8 @@ Sutton:
     }
 
  Wigan:
+  goto District18;
+
  Worcester:
   cur = postcode[++c];
   switch(cur)
@@ -3897,16 +3918,13 @@ Sutton:
     }
 
  Walsall:
-  
- Wolverhampton:
   cur = postcode[++c];
   switch(cur)
     {
     case '1':
       if (p == 6)
 	goto inward;
-      goto District06;
-      
+      goto District05;
     case '2':
     case '3':
     case '4':
@@ -3916,6 +3934,30 @@ Sutton:
     case '8':
     case '9':
       goto inward;
+    default:
+      goto invalid;
+    }
+  
+ Wolverhampton:
+  cur = postcode[++c];
+  switch(cur)
+    {
+    case '1':
+      if (p == 6)
+	goto inward;
+      goto District06;
+    case '2':
+    case '3':
+    case '4':
+    case '5':
+    case '6':
+    case '7':
+    case '8':
+      goto inward;
+    case '9':
+      if (p == 6)
+	goto inward;
+      goto District89;      
     default:
       goto invalid;
     }
@@ -4474,6 +4516,17 @@ Sutton:
       goto invalid;
     }
 
+ District34:
+  cur = postcode[++c];
+  switch(cur)
+    {
+    case '3':
+    case '4':
+      goto inward;
+    default:
+      goto invalid;
+    }
+
  District47:
   cur = postcode[++c];
   switch(cur)
@@ -4573,6 +4626,7 @@ Sutton:
     default:
       goto invalid;
     }
+
  District79:
   cur = postcode[++c];
   switch(cur)
@@ -4595,6 +4649,7 @@ Sutton:
     default:
       goto invalid;
     }
+
  District99:
   cur = postcode[++c];
   switch(cur)
@@ -4604,6 +4659,7 @@ Sutton:
     default:
       goto invalid;
     }
+
  District9:
   cur = postcode[++c];
   switch(cur)
@@ -4613,6 +4669,7 @@ Sutton:
     default:
       goto invalid;
     }
+
  District8:
   cur = postcode[++c];
   switch(cur)
